@@ -13,6 +13,6 @@ The primary objective will be for students to share opportunities and network to
 
 Members:
 * Lily Cabrera - Backend
-* Madeleine Glaum - Frontend
-* 3
+* Savannah Fletcher - Front-end
+* Madeleine Glaum - Front-end
 * Rachel Ponce - Backend
