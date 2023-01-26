@@ -13,6 +13,6 @@ The primary objective will be for students to share opportunities and network to
 
 Members:
 * Lily Cabrera
-* 2
+* Madeleine Glaum
 * 3
 * Rachel Ponce
