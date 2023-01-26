@@ -12,7 +12,7 @@ This application would have different features as listed below:
 The primary objective will be for students to share opportunities and network to ultimately help each other succeed in the world of computer science. Having as many opportunities listed all together in one website will allow UF computer science students to not only learn about but take advantage of as many resources as possible from the rest of the UF computer science community.
 
 Members:
-• Lily Cabrera
-• 
-• 
-• Rachel Ponce
+* 1
+* 2
+* 3
+* Rachel Ponce
