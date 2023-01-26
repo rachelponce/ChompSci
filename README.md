@@ -1,7 +1,7 @@
 # ChompSci
-Project Name: ChompSci
+**Project Name**: ChompSci
 
-Project Description:
+**Project Description**:
 A web-based application designed to bring the UF Computer Science community together by promoting and organizing events and opportunities, as well as encouraging CS students to connect more with one another. 
 
 This application would have different features as listed below:
@@ -14,7 +14,7 @@ This application would have different features as listed below:
 
 The primary objective will be for students to share opportunities and network to ultimately help each other succeed in the world of computer science. Having as many opportunities listed all together in one website will allow UF computer science students to not only learn about but take advantage of as many resources as possible from the rest of the UF computer science community.
 
-Members:
+**Members**:
 * Lily Cabrera - Back-End Engineer
 * Savannah Fletcher - Front-End Engineer
 * Madeleine Glaum - Front-End Engineer
