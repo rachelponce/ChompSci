@@ -9,13 +9,13 @@ As a researcher, I want to reach out to computer science students at UF and find
 
 
 Issues planned to Address:
-{} Login Page setup
-{} Basic website structure and functional navigation between pages
-{} Profiles for bio, contact info, involvements, etc.
-{} Homepage setup
+1) Login Page setup
+2) Basic website structure and functional navigation between pages
+3) Profiles for bio, contact info, involvements, etc.
+4) Homepage setup
 
 Successfully Completed:
-{}
+1)
 
 Incomplete:
-{}
+1)
