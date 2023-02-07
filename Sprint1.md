@@ -14,8 +14,11 @@ Issues planned to Address:
 3) Profiles for bio, contact info, involvements, etc.
 4) Homepage setup
 
-Successfully Completed:
-1)
+Completed Issues:
+1) Login Page setup (front and backend not connected yet)
+2) Basic website structure and functional navigation between pages
 
-Incomplete:
-1)
+Incomplete Issues:
+1) Profiles
+2) Homepage setup
+These goals were unable to be achieved by the end of Sprint 1. As beginners to TypeScript, Go, and all of the new frameworks, we had no point of reference for how long these objectives would take to complete and how difficult they were. A large amount of time was dedicated to installing new frameworks and getting a new project working with both TypeScript and Go. These will be our first goals to complete for Sprint 2.
