@@ -21,4 +21,5 @@ Completed Issues:
 Incomplete Issues:
 1) Profiles
 2) Homepage setup
+
 These goals were unable to be achieved by the end of Sprint 1. As beginners to TypeScript, Go, and all of the new frameworks, we had no point of reference for how long these objectives would take to complete and how difficult they were. A large amount of time was dedicated to installing new frameworks and getting a new project working with both TypeScript and Go. These will be our first goals to complete for Sprint 2.
