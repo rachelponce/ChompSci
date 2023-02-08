@@ -11,17 +11,17 @@ As a **tutor**, I want to promote my services and any helpful resources I know o
 
 
 
-Issues planned to Address:
+**Issues planned to Address**:
 1) Login Page setup
 2) Basic website structure and functional navigation between pages
 3) Profiles for bio, contact info, involvements, etc.
 4) Homepage setup
 
-Completed Issues:
+**Completed Issues**:
 1) Login Page setup (front and backend not connected yet)
 2) Basic website structure and functional navigation between pages
 
-Incomplete Issues:
+**Incomplete Issues**:
 1) Profiles
 2) Homepage setup
 
