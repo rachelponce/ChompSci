@@ -14,7 +14,7 @@ As a **recruiter**, I want to make announcements about positions I'm looking to 
 
 As a **professor**, I want to reach out to current and past students to offer opportunities in the field of academia, so that I can help students gain experience while they assist me with instructional or researching responsibilities. 
 
-As an **advisor**, I want to guide students to a resource of opportunities where they can network with peers, professionals, and instructors, so that I can help navigate students to the next step in their academic and professional careers.
+As a **CISE advisor**, I want to guide students to a resource of opportunities where they can network with peers, professionals, and instructors, so that I can help navigate students to the next step in their academic and professional careers.
 
 
 
