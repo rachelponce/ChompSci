@@ -14,10 +14,7 @@
     "bootstrap": "^4.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-=======
     "react-icons": "^4.7.1",
->>>>>>> 53b84a2db0dd83e8b39df16c5d941b8d5b98fbec
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
