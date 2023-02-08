@@ -5,12 +5,14 @@ const SignIn = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div style={{
+            {/* <div style={{
             display: "flex", 
             justifyContent: "center", 
             alignItems: "center",
             height: "90vh"
-        }}>Sign-in Page</div>
+        }}>Sign-in Page</div> */}
+
+        <h1> Savannah's code goes here</h1>
         </div>
 
     )
