@@ -1,9 +1,12 @@
-User Stories:
+**User Stories**:
 
-As a student, I want to stay up to date with the latest UF Computer Science information, events, and opportunities, so that I can help myself to break into tech. 
+As a **student**, I want to stay up to date with the latest UF Computer Science information, events, and opportunities, so that I can help myself to break into tech. 
 
-As a researcher, I want to reach out to computer science students at UF and find a research assistant, so that I can get necessary aid with my work and give students opportunities to get more involved in computer science outside of the classroom.
+As a **researcher**, I want to reach out to computer science students at UF and find a research assistant, so that I can get necessary aid with my work and give students opportunities to get more involved in computer science outside of the classroom.
 
+As a **website administrator**, I want to maintain and organize content as well as manage opportunity postings and user profiles, so that I can give different users their appropriate permissions and ensure the application is functional, accurate, and up-to-date.
+
+As a **tutor**, I want to promote my services and any helpful resources I know of to a greater range of computer science students, so that I can have better exposure and be of great aid to many others who wish to receive help with their CISE courses. 
 
 
 
