@@ -42,7 +42,8 @@ export const Bars = styled(FaBars) `
 export const NavMenu = styled.div`
     display: flex; 
     align-items: center; 
-    margin-right: -24px; 
+    // margin-right: -24px; 
+    margin-right: 24px; 
 
     @media screen and (max-width: 768px) {
         display: none; 
@@ -61,14 +62,16 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
     border-radius: 4px; 
-    background: #256ce1; 
+    background: #2290ff; 
     padding: 10px 22px; 
-    color: #fff; 
+    color: #000; 
     transition: all 0.2s ease-in-out; 
     border: none; 
     outline: none; 
     cursor: pointer; 
     text-decoration: none; 
+
+    margin-left: 24px; 
 
     &:hover {
         transition: all 0.2s ease-in-out;

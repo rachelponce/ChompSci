@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../App.css"
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './Navbar-index'
 
 const Navbar = () => {
@@ -25,12 +26,15 @@ const Navbar = () => {
                 <NavLink to="/signup">
                      Sign Up 
                 </NavLink>
-            </NavMenu>
-            <NavBtn>
                 <NavBtnLink to="/signin">
                      Sign In 
                 </NavBtnLink>
-            </NavBtn>
+            </NavMenu>
+            {/* <NavBtn> */}
+                {/* <NavBtnLink to="/signin">
+                     Sign In 
+                </NavBtnLink> */}
+            {/* </NavBtn> */}
         </Nav>
         </>
     )

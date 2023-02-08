@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
 
 * {
-  font-family: "Sora", sans-serif, italic;  
+  font-family: 'Work Sans', sans-serif;  
+  font-size: 17px;
   box-sizing: border-box; 
   margin: 0; 
   padding: 0; 
 }
+
