@@ -8,6 +8,10 @@ As a **website administrator**, I want to maintain and organize content as well 
 
 As a **tutor**, I want to promote my services and any helpful resources I know of to a greater range of computer science students, so that I can have better exposure and be of great aid to many others who wish to receive help with their CISE courses. 
 
+As a **club director**, I want to announce my club’s upcoming meetings, opportunities, and events in a place where I can reach the most Computer Science students.
+
+As a **recruiter**, I want to make announcements about positions I'm looking to fill and have my message reach as many Computer Science students as possible.
+
 
 
 
