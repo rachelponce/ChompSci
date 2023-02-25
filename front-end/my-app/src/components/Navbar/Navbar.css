@@ -1,0 +1,34 @@
+.navbar {
+    background: black;
+    height: 80px; 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0.5rem calc((100vw - 1000px) / 2);
+    z-index: 10; 
+}
+
+.links {
+    color: #fff; 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    padding: 0 1 rem; 
+    height: 100%; 
+    cursor: pointer; 
+    /* add the highlight if active */ 
+}
+
+.button { 
+    border-radius: 4px; 
+    background: #2290ff; 
+    padding: 10px 22px; 
+    color: #000; 
+    transition: all 0.2s ease-in-out; 
+    border: none; 
+    outline: none; 
+    cursor: pointer; 
+    text-decoration: none; 
+
+    margin-left: 24px; 
+}
