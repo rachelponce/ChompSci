@@ -10,7 +10,7 @@ export const SignIn = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
             
         <header className="Login-header">
           
