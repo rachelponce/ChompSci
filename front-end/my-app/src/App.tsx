@@ -15,9 +15,6 @@ import Footer from './components/Footer/Footer'
 function App() {
   return (
     <Router>
-      {/* // Right now app.tsx doesn't do anything, navbar and footer are
-      // called within the function of each page 
-      // Ex: go to pages/Home-page.tsx to see how navbar and footer are called */}
       <Navbar />
       <Routes>
         <Route path="/" element={ <Home/> }></Route>
