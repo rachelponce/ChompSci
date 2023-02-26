@@ -32,10 +32,12 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
 
   return (
     //formatting of login page: username/input box,password/input box, button
-    <div className="rectangle">
     <form onSubmit={handleSubmit}>
       <div>
+      <div className="header">
+        {/* Sign In: */}
         <p>Sign In:</p>
+        </div>
         <label htmlFor="username-input">Username: </label>
         <input
           id="username-input"
@@ -54,11 +56,12 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
         />
         <p></p>
       </div>
+      <header className="button">
       <button id="login-button" type="submit" disabled={isDisabled}>
         Submit
       </button>
+      </header>
     </form>
-    </div>
   );
 };
 

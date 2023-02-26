@@ -11,8 +11,8 @@
   }
   
   .socialMedia svg {
-    color: blue;
-    margin: 20px;
+    color: white; 
+    margin: 10px;
     font-size: 70px;
     cursor: pointer;
   }
