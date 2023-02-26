@@ -1,8 +1,8 @@
 .box {
     display: flex;
-    background-color: #282c34;
+    /* background-color: #282c34; */
     width: 100vw;
-    height: 91vh;
+    height: 90vh;
     justify-content: center;
 }
 .Login-header {
@@ -13,7 +13,6 @@
     height: 45vh;
     justify-content: center;
     align-items: center;
-    /* align-content: space-around; */
     font-size: calc(4px + 2vmin);
     font-family: 'Work Sans', sans-serif;
     color: #282c34;
