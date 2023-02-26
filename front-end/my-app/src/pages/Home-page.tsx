@@ -5,19 +5,15 @@ import Footer from '../components/Footer/Footer'
 
 const Home = () => {
     return (
-        <div>
-            {/* <Navbar></Navbar> */}
             <div style={{
             display: "flex", 
             justifyContent: "center", 
             alignItems: "center",
-            height: "90vh"
+            height: "90vh",
+            backgroundColor: "#282c34"
         }}>
             Home Page
             </div>
-        {/* <Footer></Footer> */}
-        </div>
-
     )
 }
 
