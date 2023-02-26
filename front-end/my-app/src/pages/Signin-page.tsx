@@ -11,7 +11,6 @@ export const SignIn = () => {
 
     return (
         <div>
-            <Navbar></Navbar> 
             <div className="box">
               <header className="Login-header">
                 <LoginForm onSubmit ={onSubmitUsername} />
