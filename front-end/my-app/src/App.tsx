@@ -6,9 +6,11 @@ import Navbar from './components/Navbar/Navbar-elements';
 
 function App() {
   return (
+    <div className="generalText">
     <Router>
       <Navbar />
     </Router>
+    </div>
   );
 }
 

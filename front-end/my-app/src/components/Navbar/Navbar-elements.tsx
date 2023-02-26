@@ -4,6 +4,7 @@ import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './Navbar-index'
 
 const Navbar = () => {
     return (
+     <div className="generalText">
         <>
         <Nav>
             <NavLink to="/">
@@ -37,6 +38,7 @@ const Navbar = () => {
             {/* </NavBtn> */}
         </Nav>
         </>
+        </div>
     )
 }
 
