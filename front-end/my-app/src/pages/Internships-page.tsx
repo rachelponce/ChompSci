@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar-elements'
 const Internships = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
             <div style={{
             display: "flex", 
             justifyContent: "center", 
