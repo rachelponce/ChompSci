@@ -11,7 +11,8 @@ const Home = () => {
             display: "flex", 
             justifyContent: "center", 
             alignItems: "center",
-            height: "90vh"
+            height: "90vh",
+            backgroundColor: "#282c34"
         }}>
             Home Page
             </div>
