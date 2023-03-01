@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { Api } from '@mui/icons-material';
+import React, { SyntheticEvent, useEffect } from 'react';
 import './signin-style.css';
 
 export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
@@ -6,12 +7,33 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
   const [password, setPassword] = React.useState('');
   const [isDisabled, setIsDisabled] = React.useState(true);
 
-  function handleSubmit(event: { preventDefault: () => void; }) {
+  async function handleSubmit(event: { preventDefault: () => void; }) {
     event.preventDefault();
     onSubmit(username, password);
     setUsername('');
     setPassword('');
     setIsDisabled(true);
+
+  // Useful for catching errors in console
+  //  console.log({
+  //   username,
+  //   password
+  // }) 
+
+  // Passing username and password to backend
+  // Will initially print failing message for Sprint 2 since there are no stored users to sign in 
+   const response = await fetch('http://localhost:3000/api/signin', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        Username: username,
+        Password: password
+      })
+    });
+
+    const content = await response.json();
+
+    console.log(content);
   }
 
   function handleChangeUsername(event: { target: { value: string; }; }) {

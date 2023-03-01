@@ -1,15 +1,8 @@
 package server
 
-import (
-	"chompSci/internal/database"
-	"chompSci/internal/store"
-)
-
 func Start() {
-  store.SetDBConnection(database.NewDBOptions())
-  
-  router := setRouter()
+	router := setRouter()
 
-  // Start listening and serving requests
-  router.Run(":8080")
+	// Start listening and serving requests
+	router.Run(":8080")
 }
