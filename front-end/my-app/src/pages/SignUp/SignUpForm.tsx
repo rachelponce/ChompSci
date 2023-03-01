@@ -22,6 +22,7 @@ interface SignUpProps {
 
 export class SignUpForm extends React.Component<SignUpProps, SignUpState>
 {
+    onSubmitUsername = (username: string, password: string) => alert('Your Username: '+ username +'\nPassword: '+ password);
 
     handleSubmit = (event : any) => {
         event.preventDefault();
@@ -31,6 +32,7 @@ export class SignUpForm extends React.Component<SignUpProps, SignUpState>
         );
         if(validity == true){
            console.log("Registering can be done");
+           // SEND USERNAME, EMAIL, AND PASSWORD TO BACKEND HERE  
         }else{
            console.log("Register failed, invalid input")
         }
