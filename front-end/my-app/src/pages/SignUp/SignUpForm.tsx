@@ -98,7 +98,7 @@ export class SignUpForm extends React.Component<SignUpProps, SignUpState>
                      {errors.password.length > 0 &&  <span style={{color: "red"}}>{errors.password}</span>}
    </div>              
                   <div className='submit'>
-                     <button>Register Me</button>
+                     <button>Register</button>
                   </div>
              </form>
          </div>
