@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test, cypress open, jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -50,8 +50,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
     "@types/node": "^18.14.2",
     "@types/styled-components": "^5.1.26",
-    "cypress": "^12.7.0"
+    "babel-jest": "^29.4.3",
+    "cypress": "^12.7.0",
+    "ts-jest": "^29.0.5"
   }
 }
