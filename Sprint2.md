@@ -1,4 +1,4 @@
-#Sprint 2
+# Sprint 2
 
 **Work Completed:**
 1) Front-end and backend connection 
