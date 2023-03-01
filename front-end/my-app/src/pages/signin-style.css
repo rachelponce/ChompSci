@@ -26,3 +26,8 @@
     display: flex;
     justify-content: center;
 }
+.newPrompt {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+}
