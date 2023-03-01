@@ -5,8 +5,6 @@ import Footer from '../components/Footer/Footer'
 
 const Home = () => {
     return (
-        <div>
-            {/* <Navbar></Navbar> */}
             <div style={{
             display: "flex", 
             justifyContent: "center", 
@@ -16,9 +14,6 @@ const Home = () => {
         }}>
             Home Page
             </div>
-        {/* <Footer></Footer> */}
-        </div>
-
     )
 }
 
