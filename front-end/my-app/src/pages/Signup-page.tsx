@@ -1,4 +1,5 @@
 import React from 'react'
+import { SignUpForm } from './SignUp/SignUpForm'
 import Navbar from '../components/Navbar/Navbar-elements'
 
 const SignUp = () => {
@@ -9,8 +10,11 @@ const SignUp = () => {
             display: "flex", 
             justifyContent: "center", 
             alignItems: "center",
-            height: "90vh"
-        }}>Sign-up Page</div>
+            height: "90vh",
+            backgroundColor: "#282c34"
+        }}>
+            <SignUpForm />
+            </div>
         </div>
 
     )
