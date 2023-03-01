@@ -1,4 +1,5 @@
 import React, { SyntheticEvent, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import './signin-style.css';
 
 export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
@@ -59,7 +60,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
         {/* Sign In: */}
         <p>Sign In:</p>
         </div>
-        <label htmlFor="username-input">Username: </label>
+        <label htmlFor="username-input">UF Email: </label>
         <input
           id="username-input"
           type="text"
@@ -81,6 +82,10 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
       <button id="login-button" type="submit" disabled={isDisabled}>
         Submit
       </button>
+      </header>
+      <p></p>
+      <header className="newPrompt">
+        <Link to="/signup">New? Sign up here!</Link>
       </header>
     </form>
   );
