@@ -1,7 +1,6 @@
 package store
 
 import (
-	//"errors"
 	"fmt"
 
 	"gorm.io/driver/sqlite"
