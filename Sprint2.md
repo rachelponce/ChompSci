@@ -16,7 +16,7 @@
 ## Backend Unit Testing
 * ...
 
-## API Documentation** 
+## API Documentation 
 ### router.go
 1. **func setRouter()**
 In this function, the default gin router and the ability to redirect the route with handlers is made. Most importantly, the API route group is created with two post requests for the sign-up page and the sign-in page. The post request for the sign-up page is meant to pass in user login information to the server to store as a valid user in a database. The post request for the sign-in page is meant to pass in user login information to verify whether the user is a valid user according to the information already stored in the database. 
