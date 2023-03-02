@@ -17,6 +17,13 @@ func signUp(ctx *gin.Context) {
 	}
 	// else, return JWT for authentication
 	store.Users = append(store.Users, user)
+	
+	// Print user info to verify whether information being passed into database is correct
+	store.PrintUserInfo(user.Username, user.Password)
+	
+	// Update table by adding new entry into database
+	store.UpdateTable(user.Username, user.Password)
+	
 	ctx.JSON(http.StatusOK, gin.H{
 		"msg": "Signed up successfully.",
 		"jwt": "123456789", // dummy JWT for testing
