@@ -11,7 +11,7 @@ const Tutoring = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>Tutoring Page</div>
+        }}><h1>Tutoring Page</h1></div>
         </div>
 
     )

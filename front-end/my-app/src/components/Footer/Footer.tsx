@@ -8,7 +8,10 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="socialMedia">
-            <GitHubIcon onClick={() => window.open('https://github.com/rachelponce/ChompSci')}/>
+            <GitHubIcon 
+            id="github-button" 
+            onClick={() => 
+                window.open('https://github.com/rachelponce/ChompSci')}/>
             </div>
             <p> &copy; 2023 Chomp-Sci</p>
         </div>

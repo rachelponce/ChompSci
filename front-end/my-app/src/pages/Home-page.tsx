@@ -12,7 +12,7 @@ const Home = () => {
             height: "90vh",
             backgroundColor: "#282c34"
         }}>
-            Home Page
+            <h1>Home Page</h1>
             </div>
     )
 }

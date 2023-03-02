@@ -33,3 +33,9 @@ function App() {
 }
 
 export default App; 
+// NOTE: read package.json to make sure everything is installed
+// jest version shoudl be "ts-jest": "^29.0.5",
+// npm i jest @types/jest ts-jest typescript -D
+// npm install --save-dev jest  
+// npm install --save-dev @babel/preset-typescript
+

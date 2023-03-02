@@ -18,8 +18,6 @@ interface SignUpProps {
     }
  }
 
-
-
 export class SignUpForm extends React.Component<SignUpProps, SignUpState>
 {
     onSubmitUsername = (username: string, password: string) => alert('Your Username: '+ username +'\nPassword: '+ password);
@@ -32,7 +30,6 @@ export class SignUpForm extends React.Component<SignUpProps, SignUpState>
         );
         if(validity == true){
            console.log("Registering can be done");
-           // SEND USERNAME, EMAIL, AND PASSWORD TO BACKEND HERE  
         }else{
            console.log("Register failed, invalid input")
         }
@@ -86,9 +83,12 @@ export class SignUpForm extends React.Component<SignUpProps, SignUpState>
                <form onSubmit={this.handleSubmit} noValidate >
                   <div className='username'>
                      <label htmlFor="username">Username</label>
-                     <input type='text' name='username' onChange=            {this.handleChange}/>
+                     <input 
+                     type='text'
+                      name='username'
+                       onChange={this.handleChange}/>
                       {errors.username.length > 0 &&  <span style={{color: "red"}}>{errors.username}</span>}
-   </div>
+                      </div>
                   <div className='email'>
                      <label htmlFor="email">UF Email</label>
                      <input type='email' name='email' onChange={this.handleChange}/>
