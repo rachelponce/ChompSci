@@ -8,7 +8,7 @@
 5) Established connection with database to save user login information
 
 ## Front-end Unit Testing
-* ...
+* Unit tests for five of the pages available on the website test each page for rendered components. Pages include Home, About, Calendar, Tutoring, and Internships. Test for rendered headers. Completed using react-testing-library. Very basic tests were done to get a feel of how unit testing works and can be used to test the functionality of different components of the application. In future Sprints we will implement more advanced tests as we work to develop more complex aspects of our app like user profiles and discussion posts. 
 
 ## Cypress Front-end Test
 * Very simple Cypress testing created for the Sign-Up Page and the Footer components. As demonstrated in our Sprint 2 video, we were successfully able to integrate Cypress into our project and test the rendering of a couple of front-end components. In future Sprints, we will work on more complex testing now that we have an understanding of how to work with Cypress.
