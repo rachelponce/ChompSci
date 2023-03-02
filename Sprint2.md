@@ -5,7 +5,7 @@
 2) Improvement of front-end organization and linking
 3) Sign-in page fully functional
 4) Addition of website footer with logos/links
-5) ...
+5) Established connection with database to save user login information
 
 **Front-end Unit Testing**
 * ...
