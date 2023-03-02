@@ -14,7 +14,7 @@
 * Very simple Cypress testing created for the Sign-Up Page and the Footer components. As demonstrated in our Sprint 2 video, we were successfully able to integrate Cypress into our project and test the rendering of a couple of front-end components. In future Sprints, we will work on more complex testing now that we have an understanding of how to work with Cypress.
 
 ## Backend Unit Testing
-* ...
+* Unit tests for the backend were created using... In future sprints, we will work on creating more advanced tests to detect more minor issues that may have gone unnoticed in our current tests. We will also be creating tests to examine our database's processing of user information to ensure that all information is correct and being stored properly for all front end requests made.
 
 ## API Documentation 
 ### router.go
