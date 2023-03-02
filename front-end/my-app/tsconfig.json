@@ -22,7 +22,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
+    "src", 
     "**/*.ts"
-  ],
+, "src/Footer.test.tsx", "jest.config.js"  ]
 }

@@ -11,7 +11,7 @@ const Calendar = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>Calendar Page</div>
+        }}><h1>Calendar Page</h1></div>
         </div>
 
     )

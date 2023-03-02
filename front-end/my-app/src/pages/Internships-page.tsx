@@ -11,7 +11,8 @@ const Internships = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>Internships Page</div>
+        }}><h1>Internships Page</h1>
+        </div>
         </div>
 
     )

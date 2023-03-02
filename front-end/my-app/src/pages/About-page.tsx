@@ -11,7 +11,9 @@ const About = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>About Page</div>
+        }}>
+            <h1>About Page</h1>
+            </div>
         </div>
 
     )
