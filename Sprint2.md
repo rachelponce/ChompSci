@@ -19,4 +19,18 @@
 ## API Documentation** 
 ### router.go
 1. func setRouter()
+In this function, the default gin router and the ability to redirect the route with handlers is made. Most importantly, the API route group is created with two post requests for the sign-up page and the sign-in page. The post request for the sign-up page is meant to pass in user login information to the server to store as a valid user in a database. The post request for the sign-in page is meant to pass in user login information to verify whether the user is a valid user according to the information already stored in the database. 
+
 ### user.go
+1.	func signUp()
+This function establishes the connection between the front end and the back end as related to the sign-up page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is either an error if binding fails and the connection between the front end and back end is not made, or a message and a JSON Web Token (JWT) for authentication. In addition, if connection is successful, entry will use PrintUserInfo() and UpdateTable() to move that data into the database and essentially store that user’s information as a valid user of the web application.
+
+2.	func signIn()
+This function establishes the connection between the front end and the back end as related to the sign-in page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is either an error if binding fails and the connection between the front end and back end is not made, or a message and a JSON Web Token (JWT) for authentication. 
+
+### users.go
+1.	func PrintUserInfo()
+This function verifies whether the user information being submitted through the sign-up page of the application is properly being passed to the backend to ensure it is correctly moving forward toward the database as well. The input is the user’s username and password and the output is the printing of these two pieces of data in the server terminal. 
+
+2.	func UpdateTable() 
+This function establishes the backend’s connection to the SQLite database using Gorm. The input is the user’s username and password while the output is a modification to the database whether that is creating a new entry, updating, reading, or deleting an entry. The function first determines whether the backend is able to properly connect to the database, otherwise outputting an error. Once the connection is verified, modifications to the database proceed to happen using the user information passed in through the front end.
