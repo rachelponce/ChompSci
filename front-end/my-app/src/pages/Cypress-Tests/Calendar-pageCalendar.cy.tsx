@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from './Calendar/Calendar-page'
+import Calendar from '../Calendar/Calendar-page'
 
 describe('<Calendar />', () => {
   it('renders', () => {

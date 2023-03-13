@@ -1,5 +1,5 @@
 import React from 'react'
-import Internships from './Internships-page'
+import Internships from '../Internships/Internships-page'
 
 describe('<Internships />', () => {
   it('renders', () => {

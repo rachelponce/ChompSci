@@ -1,8 +1,7 @@
 import React from 'react'
-import { SignUpForm } from './SignUp/SignUpForm'
-import Navbar from '../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-elements'
 
-const SignUp = () => {
+const Tutoring = () => {
     return (
         <div>
             {/* <Navbar></Navbar> */}
@@ -12,12 +11,10 @@ const SignUp = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>
-            <SignUpForm />
-            </div>
+        }}><h1>Tutoring Page</h1></div>
         </div>
 
     )
 }
 
-export default SignUp
+export default Tutoring

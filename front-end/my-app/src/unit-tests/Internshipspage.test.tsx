@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import Internships from '../pages/Internships-page'
+import Internships from '../pages/Internships/Internships-page'
 
 test('Displays text on the internships page', async () => {
   // ARRANGE
