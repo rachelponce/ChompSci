@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import About from '../src/pages/About-page'
+import About from '../pages/About-page'
 
 test('Displays text on the About page', async () => {
   // ARRANGE

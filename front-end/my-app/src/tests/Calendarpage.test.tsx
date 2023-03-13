@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import Calendar from '../src/pages/Calendar-page'
+import Calendar from '../pages/Calendar/Calendar-page'
 
 test('Displays text on the calendar page', async () => {
   // ARRANGE
