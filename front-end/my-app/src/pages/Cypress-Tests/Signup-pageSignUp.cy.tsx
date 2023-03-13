@@ -1,9 +1,9 @@
 import React from 'react'
-import App from './App'
+import SignUp from '../SignUp/Signup-page'
 
-describe('<App />', () => {
+describe('<SignUp />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<App />)
+    cy.mount(<SignUp />)
   })
 })
