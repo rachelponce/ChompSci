@@ -32,20 +32,36 @@ func signUp(ctx *gin.Context) {
 
 func signIn(ctx *gin.Context) {
 	user := new(store.User)
+
 	if err := ctx.Bind(user); err != nil {
 		ctx.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
 	}
-	for _, u := range store.Users {
-		if u.Username == user.Username && u.Password == user.Password {
-			ctx.JSON(http.StatusOK, gin.H{
-				"msg": "Signed in successfully.",
-				"jwt": "123456789",
-			})
-			return
-		}
+
+	/*
+		    // Old way of verifying users
+			for _, u := range store.Users {
+				if u.Username == user.Username && u.Password == user.Password {
+					ctx.JSON(http.StatusOK, gin.H{
+						"msg": "Signed in successfully.",
+						"jwt": "123456789",
+					})
+					return
+				}
+			}
+	*/
+
+	// Current Verification for Users
+	results := store.Verification(user.Username, user.Password)
+	if results != nil {
+		fmt.Println("Invalid login credentials provided")
+		ctx.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"err": "Sign in failed."})
+		return
 	}
 
-	// Error message printed in Sprint 2 since there are no users to "sign in"
-	ctx.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"err": "Sign in failed."})
+	ctx.JSON(http.StatusOK, gin.H{
+		"msg": "Signed in successfully.",
+		"jwt": "123456789",
+	})
+
 }
