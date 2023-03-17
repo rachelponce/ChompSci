@@ -33,8 +33,25 @@ func UpdateTable(Username string, Password string) {
 
 	var user User
 	db.First(&user, 1) // first row in table ordered by ID
-	fmt.Println("db.First(&user,1)")
+	//fmt.Println("db.First(&user,1)")
 	fmt.Println("User ID:", user.ID)
 
-	db.Delete(&user, 1)
+	//db.Delete(&user, 1)
+}
+
+func Verification(Username string, Password string) error {
+	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	var user User
+	db.First(&user, "username = ?", Username)
+
+	if err := db.Where("username = ?", Username).First(&user).Error; err != nil {
+		return fmt.Errorf("Invalid login credentials provided", err)
+	}
+
+	println("User found")
+	return nil
 }
