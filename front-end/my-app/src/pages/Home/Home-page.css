@@ -1,0 +1,12 @@
+.carousel {
+    align-items: center; 
+    height: 100%;
+    transform: scale(0.8); 
+    background-color:#2290ff;
+}
+.legend {
+    font-size: 50px;
+}
+.popoverStyle {
+    height: 30vh; 
+}
