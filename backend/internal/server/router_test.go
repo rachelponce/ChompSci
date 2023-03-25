@@ -48,10 +48,9 @@ func TestSignUp(t *testing.T) {
 	user := new(store.User)
 	store.Users = append(store.Users, user)
 
-	// redundant, statement does not have return 
+	// redundant, statement does not have return
 	assert.Equal(t, string("Signed up successfully."), "Signed up successfully.")
 }
 
 //func TestSignIn(t *testing.T) {
 //}
-
