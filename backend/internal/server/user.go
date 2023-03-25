@@ -3,6 +3,7 @@ package server
 import (
   	"net/http"
   	"chompSci/internal/store"
+	"fmt"
   	"github.com/gin-gonic/gin"
 )
 
