@@ -1,0 +1,28 @@
+.box {
+    display: flex;
+    /*background-color: #282c34;*/
+    width: 100vw;
+    height: 90vh;
+    justify-content: center;
+}
+.Login-header {
+    display: flex;
+    align-self: center;
+    background-color: #cacacc;
+    width: 30vw;
+    height: 45vh;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(4px + 2vmin);
+    font-family: 'Work Sans', sans-serif;
+    color: #282c34;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+}
