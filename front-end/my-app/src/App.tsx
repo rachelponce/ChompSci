@@ -7,7 +7,7 @@ import Calendar from './pages/Calendar/Calendar-page';
 import Internships from './pages/Internships/Internships-page';
 import Tutoring from './pages/Tutoring/Tutoring-page';
 import SignIn from './pages/SignIn/Signin-page';
-import SignUp from './pages/SignUp/Signup-page';
+import SignUp from './pages/SignUp/Signup-page-NEW';
 import Navbar from './components/Navbar/Navbar-elements';
 import Footer from './components/Footer/Footer'
 // import Navbar from './components/Navbar/Navbar'
