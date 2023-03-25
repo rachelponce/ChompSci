@@ -14,7 +14,6 @@ type User struct {
 	// CreatedAt
 	// UpdatedAt
 	// DeletedAt
-
 }
 
 var Users []*User
