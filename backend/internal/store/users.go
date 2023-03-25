@@ -8,10 +8,12 @@ import (
 )
 
 type User struct {
-	Username   string `binding:`
-	Password   string `binding:`
-	//CreatedAt  time.Time
-	//ModifiedAt time.Time
+	gorm.Model
+	Username string
+	Password string `gorm:"not null"`
+	// CreatedAt
+	// UpdatedAt
+	// DeletedAt
 }
 
 var Users []*User
