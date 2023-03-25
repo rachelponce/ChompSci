@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["cypress"],
+    "types": ["cypress"], 
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,7 +22,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
+    "src", 
     "**/*.ts"
-  ],
+, "src/Footer.test.tsx", "jest.config.js"  ]
 }

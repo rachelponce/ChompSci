@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-elements'
 
-const Tutoring = () => {
+const Internships = () => {
     return (
         <div>
             {/* <Navbar></Navbar> */}
@@ -11,10 +11,11 @@ const Tutoring = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>Tutoring Page</div>
+        }}><h1>Internships Page</h1>
+        </div>
         </div>
 
     )
 }
 
-export default Tutoring
+export default Internships

@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-elements'
 // import React, { Component } from "react";
 import { render } from 'react-dom';
 import LoginForm from './LoginForm';

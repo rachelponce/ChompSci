@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-elements'
 
-const Calendar = () => {
+const About = () => {
     return (
         <div>
             {/* <Navbar></Navbar> */}
@@ -11,10 +11,12 @@ const Calendar = () => {
             alignItems: "center",
             height: "90vh",
             backgroundColor: "#282c34"
-        }}>Calendar Page</div>
+        }}>
+            <h1>About Page</h1>
+            </div>
         </div>
 
     )
 }
 
-export default Calendar
+export default About

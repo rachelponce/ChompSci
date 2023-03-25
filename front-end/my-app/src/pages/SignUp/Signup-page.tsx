@@ -1,10 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar/Navbar-elements'
-//import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
+import { SignUpForm } from './SignUpForm'
+import Navbar from '../../components/Navbar/Navbar-elements'
 
-const Home = () => {
+const SignUp = () => {
     return (
+        <div>
+            {/* <Navbar></Navbar> */}
             <div style={{
             display: "flex", 
             justifyContent: "center", 
@@ -12,9 +13,11 @@ const Home = () => {
             height: "90vh",
             backgroundColor: "#282c34"
         }}>
-            Home Page
+            <SignUpForm />
             </div>
+        </div>
+
     )
 }
 
-export default Home
+export default SignUp
