@@ -1,3 +1,4 @@
+/*
 import React from "react"; 
 import '../SignUp/SignUpForm.css'
 
@@ -108,3 +109,4 @@ export class SignUpForm extends React.Component<SignUpProps, SignUpState>
      );
     }
 }
+*/
