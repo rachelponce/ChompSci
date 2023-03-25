@@ -1,3 +1,4 @@
+/*
 import React from 'react'
 import { SignUpForm } from './SignUpForm'
 import Navbar from '../../components/Navbar/Navbar-elements'
@@ -21,3 +22,5 @@ const SignUp = () => {
 }
 
 export default SignUp
+
+*/
