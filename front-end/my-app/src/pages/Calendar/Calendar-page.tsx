@@ -71,8 +71,6 @@ sidebarEventLocation: string = "Default location";
                 trigger: "hover",
                 customClass: "popoverStyle",
                 content: 
-                  info.event.title + 
-                  "<p></p>" + 
                   info.event.start + 
                   "<p></p>" + 
                   info.event.url, 
@@ -105,29 +103,7 @@ sidebarEventLocation: string = "Default location";
           <h3>{this.sidebarEventTime}</h3>
           <h3>{this.sidebarEventLocation}</h3>
           <h3> {this.state.currentEvents.map(renderSidebarEvent)} </h3>
-
-          {/* <ul>
-            <li>Select dates and you will be prompted to create a new event</li>
-            <li>Drag, drop, and resize events</li>
-            <li>Click an event to delete it</li>
-          </ul> */}
         </div>
-        {/* <div className='calendar-sidebar-section'> */}
-          {/* <label>
-            <input
-              type='checkbox'
-              checked={this.state.weekendsVisible}
-              onChange={this.handleWeekendsToggle}
-            ></input>
-            toggle weekends
-          </label> */}
-        {/* </div>
-        <div className='calendar-sidebar-section'>
-        <h2>All Events ({this.state.currentEvents.length})</h2>
-        <ul>
-        {this.state.currentEvents.map(renderSidebarEvent)}
-        //   </ul>
-        // </div> */}
       </div>
     )
   }
@@ -205,3 +181,26 @@ function renderSidebarEvent(event: EventApi) {
     </li>
   )
 }
+
+/* {/* <ul>
+            <li>Select dates and you will be prompted to create a new event</li>
+            <li>Drag, drop, and resize events</li>
+            <li>Click an event to delete it</li>
+          </ul> }*/
+
+          /* {/* <div className='calendar-sidebar-section'> }*/
+          {/* <label>
+            <input
+              type='checkbox'
+              checked={this.state.weekendsVisible}
+              onChange={this.handleWeekendsToggle}
+            ></input>
+            toggle weekends
+          </label> */}
+        {/* </div>
+        <div className='calendar-sidebar-section'>
+        <h2>All Events ({this.state.currentEvents.length})</h2>
+        <ul>
+        {this.state.currentEvents.map(renderSidebarEvent)}
+        //   </ul>
+        // </div> */}
