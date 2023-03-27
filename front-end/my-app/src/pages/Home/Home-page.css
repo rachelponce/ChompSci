@@ -11,6 +11,9 @@
     height: 30vh; 
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Work+Sans:wght@500&display=swap');
+
+
 .home {
     background-color: black;
     height: 90vh; 
@@ -32,9 +35,15 @@
 .title {
     animation-name: moveRight; 
     animation-duration: 0.7s;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .titleTwo {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 70px;
+    margin-bottom: 10px;
+    color: #2778e2; 
+    /* font-family: 'Work Sans', sans-serif; */
     animation-name: moveLeft; 
     animation-duration: 1s;
 }
@@ -43,13 +52,15 @@
     animation-name: moveRight; 
     animation-duration: 1.3s;
     color: white; 
-    margin-bottom: 10px; 
+    /* margin-bottom: 5px;  */
+    font-family: 'Source Code Pro', monospace;
 }
 
 .text {
-    font-size: 40px; 
-    color: white; 
+    font-size: 60px; 
+    color: #27d5e2;  
     margin-bottom: 20px;
+    font-family: 'Source Code Pro', monospace;
 }
 
 @keyframes moveRight {
@@ -95,4 +106,13 @@
         margin: 0 auto; 
         padding-left: 80px;
     }
+}
+.whats-new {
+    color: black; 
+}
+.home-image {
+    margin-top: 70px;
+    width: 50%; 
+    height: 10vh; 
+    opacity: .5;
 }

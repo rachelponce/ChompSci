@@ -8,35 +8,45 @@ var Carousel = require('react-responsive-carousel').Carousel;
 const Home = () => {
     const [state] = useState ({
         title: "Welcome to ", 
-        titleTwo: "Chomp-Sci", 
-        titleThree: "A place for UF Computer Science ", 
+        titleTwo: "chompSci", 
+        titleThree: "A place for UF Computer Science ",
+        image: "gator.gif"
     }); 
 
     return(
+        <>
         <div className="home">
-            <div className = "home-intro"> 
-            <h2> 
-                <div className='title'> {state.title}</div>
-                <div className='titleTwo'> {state.titleTwo}</div>
-                <div className='titleThree'> {state.titleThree}</div>
-            </h2>
-            <div className='text'>
-                <Typewriter 
-                options={{
-                    autoStart: true, 
-                    loop: true,
-                    delay: 40, 
-                    strings: [
-                        "Students", 
-                        "Clubs", 
-                        "Tutors",
-                        "Recruiters",
-                        "Professors",
-                    ],
-                }} />
+            <div className="home-intro">
+                <h2>
+                    <div className='title'> {state.title}</div>
+                    <div className='titleTwo'> {state.titleTwo}</div>
+                    <div className='titleThree'> {state.titleThree}</div>
+                </h2>
+                <div className='text'>
+                    <Typewriter
+                        options={{
+                            autoStart: true,
+                            loop: true,
+                            delay: 40,
+                            strings: [
+                                "students",
+                                "clubs",
+                                "tutors",
+                                "recruiters",
+                                "professors",
+                                "organizations"
+                            ],
+                        }} />
+                </div>
             </div>
+            <div className='home-image'>
+            <img src={require('../../images/gator.gif')} alt="gator"/>
             </div>
         </div>
+        <div className="whats-new">
+            <h1>New section</h1>
+        </div>
+        </>
     )
 };
 
