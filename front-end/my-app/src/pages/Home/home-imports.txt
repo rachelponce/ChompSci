@@ -1,5 +1,3 @@
 In ChompSci
 cd front-end/my-app
-npm i react-responsive-carousel
-npm install fullpage.js
 npm install typewriter-effect
