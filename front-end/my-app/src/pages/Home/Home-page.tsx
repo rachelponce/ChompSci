@@ -8,12 +8,11 @@ const Home = () => {
 
     return(
         <>
-        <div className="whats-new">
+        {/* <div className="whats-new">
             <div className='whats-new-text'>
                 Happening this week at UF:
              </div>
-        </div>
-
+        </div> */}
         <div>
              <ImageSlider slides={SliderData} />
         </div>
