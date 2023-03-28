@@ -2,9 +2,9 @@ import React from 'react';
 import {render} from "react-dom"
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Calendar from '../src/pages/Calendar/Calendar-page';
+import Calendar from './pages/Calendar/Calendar-page';
 import App from "./App"
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './other/reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -7,7 +7,8 @@ import Calendar from './pages/Calendar/Calendar-page';
 import Internships from './pages/Internships/Internships-page';
 import Tutoring from './pages/Tutoring/Tutoring-page';
 import SignIn from './pages/SignIn/Signin-page';
-import SignUp from './pages/SignUp/Signup-page-NEW';
+import SignUp from './pages/SignUp/Signup-page';
+import Landing from './pages/Landing/Landing'
 import Navbar from './components/Navbar/Navbar-elements';
 import Footer from './components/Footer/Footer'
 // import Navbar from './components/Navbar/Navbar'
@@ -18,7 +19,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={ <Home/> }></Route>
+      <Route path="/" element={ <Landing/> }></Route>
+        <Route path="/home" element={ <Home/> }></Route>
         <Route path="/about" element={ <About/> }></Route>
         <Route path="/tutoring" element={ <Tutoring/> }></Route>
         <Route path="/internships" element={ <Internships/> }></Route>

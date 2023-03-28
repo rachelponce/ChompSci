@@ -1,0 +1,3 @@
+In ChompSci
+cd front-end/my-app
+npm install typewriter-effect

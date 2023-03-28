@@ -30,7 +30,8 @@ b { /* used for event dates/times */
 .calendar {
   display: flex;
   min-height: 100%;
-  font-family: 'Work Sans', sans-serif;  
+  /* font-family: 'Work Sans', sans-serif;   */
+  /* font-family: 'Source Code Pro', monospace; */
   font-size: 14px;
   color: #000; 
 }
@@ -54,4 +55,14 @@ b { /* used for event dates/times */
 .fc { /* the calendar root */
   max-width: 1100px; 
   margin: 0 auto;
+}
+
+.popoverStyle {
+  z-index: "99999";
+  height: fit-content;  
+  font-family: 'Source Code Pro', monospace;
+}
+
+a {
+  color: #212529; 
 }
