@@ -44,18 +44,26 @@ sidebarEventLocation: string = "Default location";
               center: 'title',
               right: 'dayGridMonth,timeGridWeek,timeGridDay'
             }}
+            
             events={[
               {
                 title: "WiCSE GBM #3", 
-                date: "2023-03-22T18:30:00", 
+                date: "2023-03-22T18:30:00", // for calendar
                 location: "MCAAG186",
-                url: "https://www.instagram.com/p/Cp3JPN7uCTL/"
+                url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
+                description: "Our GBM #3 is on Wednesday, March 22 @ 6:30pm in MCCA G186 with GOOGLE!! Ever wonder what software engineers do at Google? Join us to listen about a day in the life of a software engineer at Google while enjoying Panda Express and club updates! See you there!", 
+                customTime: "Wednesday, March 22nd at 6:30pm", // for hover popup 
+                club: "Women in Computer Science and Engineering"
               }, 
               {
-                title: "event 2", 
+                title: "National Chomp Sci Day", 
                 date: "2023-03-29T05:00:00",
-                location: "CSE221"
-              }
+                location: "CSE221", 
+                url: "/", 
+                description: "Test event for the chomp sci girliepops", 
+                customTime: "Wednesday, March 29th at 5:00am", 
+                club: "Chomp-Sci"
+              }, 
             ]}
             initialView='dayGridMonth'
             editable={true}
@@ -71,9 +79,15 @@ sidebarEventLocation: string = "Default location";
                 trigger: "hover",
                 customClass: "popoverStyle",
                 content: 
-                  info.event.start + 
+                  "Event by " + info.event.extendedProps.club + 
                   "<p></p>" + 
-                  info.event.url, 
+                  info.event.extendedProps.customTime + 
+                  "<p></p>" + 
+                  "Location: " + info.event.extendedProps.location + 
+                  "<p></p>" + 
+                  info.event.extendedProps.description + 
+                  "<p></p>" + 
+                  "Click on the event for more information!",    
                 html: true,
               }) 
             }
@@ -81,7 +95,13 @@ sidebarEventLocation: string = "Default location";
             // initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
             // select={this.handleDateSelect}
             // eventContent={renderEventContent} // custom render function
-            eventClick={this.handleEventClick}
+            eventClick={function(info) {
+              info.jsEvent.preventDefault(); 
+
+              if (info.event.url) {
+                window.open(info.event.url); 
+              }
+            }}
             // eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
             /* you can update a remote database when these fire:
             eventAdd={function(){}}
@@ -96,14 +116,14 @@ sidebarEventLocation: string = "Default location";
 
   renderSidebar() {
     return (
-      <div className='calendar-sidebar'>
-        <div className='calendar-sidebar-section'>
+      <div >
+        {/* <div className='calendar-sidebar-section'>
           <h2> {this.sidebarEventTitle} </h2>
           <h3>{this.sidebarEventDate}</h3> 
           <h3>{this.sidebarEventTime}</h3>
           <h3>{this.sidebarEventLocation}</h3>
           <h3> {this.state.currentEvents.map(renderSidebarEvent)} </h3>
-        </div>
+        </div> */}
       </div>
     )
   }

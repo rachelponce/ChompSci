@@ -111,8 +111,8 @@
 .whats-new {
     background-color: #282c34;
     height: 20vh; 
-    /* width: 100%; 
-    display: flex;  */
+    width: 100%; 
+    display: flex; 
 }
 .whats-new-text {
     color: white; 

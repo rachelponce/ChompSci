@@ -59,6 +59,8 @@ b { /* used for event dates/times */
 
 .popoverStyle {
   z-index: "99999";
+  height: fit-content;  
+  font-family: 'Source Code Pro', monospace;
 }
 
 a {
