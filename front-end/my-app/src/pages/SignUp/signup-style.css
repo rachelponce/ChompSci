@@ -5,22 +5,25 @@
     height: 90vh;
     justify-content: center;
 }
-.Login-header {
+.SignUp-header {
     display: flex;
     align-self: center;
     background-color: #cacacc;
-    width: 30vw;
-    height: 45vh;
+    width: 33vw;
+    height: 55vh;
     justify-content: center;
     align-items: center;
     font-size: calc(4px + 2vmin);
     font-family: 'Work Sans', sans-serif;
     color: #282c34;
 }
-.header{
+/* .header2{
     display: flex;
     justify-content: center;
     font-size: 25px;
+} */
+.signUpText {
+    font-family: 'Source Code Pro', monospace;
 }
 .button {
     display: flex;
