@@ -1,6 +1,11 @@
 import { ClassNames } from '@emotion/react';
 import React, { SyntheticEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import './signup-style.css';
 
 export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
@@ -9,6 +14,8 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [isDisabled, setIsDisabled] = React.useState(true);
+  const [userType, setUserType] = React.useState('');
+
 
   async function handleSubmit(event: { preventDefault: () => void; }) {
     event.preventDefault();
@@ -17,7 +24,9 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
     setPassword('');
     setFirstName('');
     setLastName('');
+    setUserType('');
     setIsDisabled(true);
+
 
   // Useful for catching errors in console
   //  console.log({
@@ -25,7 +34,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
   //   password
   // }) 
 
-  // Passing username and password to backend
+  // Passing variables to backend
   // Will initially print failing message for Sprint 2 since there are no stored users to sign in 
    const response = await fetch('http://localhost:3000/api/signup', {
       method: 'POST',
@@ -34,7 +43,8 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
         FirstName: firstName,
         LastName: lastName,
         Username: username,
-        Password: password
+        Password: password,
+        UserType: userType
       })
     });
 
@@ -57,14 +67,18 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
   function handleChangePassword(event: { target: { value: string; }; }) {
     setPassword(event.target.value);
   }
+  const handleChange = (event: SelectChangeEvent) => {
+    setUserType(event.target.value as string);
+  };
+  
 
   useEffect(() => {
-    if (password !== '' && username !== ''&& firstName !== ''&& lastName !== '') {
+    if (password !== '' && username !== '' && firstName !== '' && lastName !== '' && userType !== '') {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);
     }
-  }, [username, password]);
+  }, [username, password, firstName, lastName, userType]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -108,13 +122,34 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
         />
         <p></p>
       </div>
-      
+      </div>
+      <div className="accessType">
+        Which best describes you as a user:
+        <p></p>
+
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">User Type</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={userType}
+              label="User Type"
+              onChange={handleChange}
+            >
+              <MenuItem value={1}>Student</MenuItem>
+              <MenuItem value={2}>Faculty</MenuItem>
+              <MenuItem value={3}>UF Club Board Member</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        <p></p>
+      </div>
       <header className="button">
       <button id="login-button" type="submit" disabled={isDisabled}>
         Submit
       </button>
       </header>
-      </div>
     </form>
   );
 };

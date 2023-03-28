@@ -9,8 +9,8 @@
     display: flex;
     align-self: center;
     background-color: #cacacc;
-    width: 33vw;
-    height: 55vh;
+    width: 35vw;
+    height: 60vh;
     justify-content: center;
     align-items: center;
     font-size: calc(4px + 2vmin);
@@ -25,7 +25,12 @@
 .signUpText {
     font-family: 'Source Code Pro', monospace;
 }
+.accessType{
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12pt;
+}
 .button {
     display: flex;
     justify-content: center;
+    font-family: 'Source Code Pro', monospace;
 }
