@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUp from './Signup-page-NEW'
+import SignUp from './Signup-page'
 
 describe('<SignUp />', () => {
   it('renders', () => {

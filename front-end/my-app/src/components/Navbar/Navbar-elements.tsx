@@ -7,28 +7,28 @@ const Navbar = () => {
      <div className="generalText">
         <>
         <Nav>
-            <NavLink to="/">
+            <NavLink to="/home">
                 <img src={require('../../images/logo4.png')} alt="logo"/>
             </NavLink>
             <Bars /> 
             <NavMenu>
                 <NavLink to='/about'>
-                     About 
+                     about 
                 </NavLink>
                 <NavLink to="/calendar">
-                     Calendar 
+                     calendar 
                 </NavLink>
                 <NavLink to="/tutoring">
-                     Tutoring
+                     tutoring
                 </NavLink>
                 <NavLink to="/internships">
-                     Internships
+                     internships
                 </NavLink>
                 <NavLink to="/signup">
-                     Sign Up 
+                     signUp
                 </NavLink>
                 <NavBtnLink to="/signin">
-                     Sign In 
+                     signIn 
                 </NavBtnLink>
             </NavMenu>
             {/* <NavBtn> */}
