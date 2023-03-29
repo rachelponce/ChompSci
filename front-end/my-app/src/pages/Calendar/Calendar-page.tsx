@@ -36,7 +36,7 @@ sidebarEventLocation: string = "Default location";
     return (
       <div className='calendar'>
         {this.renderSidebar()}
-        <div className='calendar-main'>
+        <div className='calendar-main' role='calendar'>
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             headerToolbar={{
