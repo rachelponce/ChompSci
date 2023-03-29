@@ -26,7 +26,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        Username: username,
+        Email: username,
         Password: password
       })
     });

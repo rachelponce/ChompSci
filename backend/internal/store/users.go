@@ -5,12 +5,16 @@ import (
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
+	//"gopkg.in/go-playground/validator.v9"
 )
 
 type User struct {
 	gorm.Model
-	Username string
-	Password string `gorm:"not null"`
+	FirstName string `validate:"required,min=2"`
+	LastName  string `validate:"required,min=2"`
+	Email     string `gorm:"uniqueIndex"`
+	Password  string `gorm:"uniqueIndex"`
+	UserType  int
 	// CreatedAt
 	// UpdatedAt
 	// DeletedAt
@@ -18,11 +22,11 @@ type User struct {
 
 var Users []*User
 
-func PrintUserInfo(Username string, Password string) {
-	fmt.Println(Username, Password)
+func PrintUserInfo(FirstName string, LastName string, Email string, Password string, UserType int) {
+	fmt.Println(FirstName, LastName, Email, Password, UserType)
 }
 
-func UpdateTable(Username string, Password string) {
+func UpdateTable(FirstName string, LastName string, Email string, Password string, UserType int) {
 	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
@@ -31,7 +35,8 @@ func UpdateTable(Username string, Password string) {
 	db.AutoMigrate(&User{})
 
 	// Create
-	db.Create(&User{Username: Username, Password: Password})
+	//db.Create(&User{Username: Username, Password: Password})
+	db.Create(&User{FirstName: FirstName, LastName: LastName, Email: Email, Password: Password, UserType: UserType})
 
 	var user User
 	db.First(&user, 1) // first row in table ordered by ID
@@ -41,16 +46,17 @@ func UpdateTable(Username string, Password string) {
 	//db.Delete(&user, 1)
 }
 
-func Verification(Username string, Password string) error {
+// verifying Email, since duplicate names are possible
+func Verification(Email string, Password string) error {
 	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
 	var user User
-	db.First(&user, "username = ?", Username)
+	db.First(&user, "email = ?", Email) // Find user with email provided in parameter
 
-	if err := db.Where("username = ?", Username).First(&user).Error; err != nil {
+	if err := db.Where("email = ?", Email).First(&user).Error; err != nil {
 		return fmt.Errorf("Invalid login credentials provided", err)
 	}
 
