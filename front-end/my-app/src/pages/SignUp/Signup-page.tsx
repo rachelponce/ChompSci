@@ -6,7 +6,7 @@ import RegisterForm from './RegisterForm';
 import './signup-style.css';
 
 export const SignUp = () => {
-  const onSubmitUsername = (username: string, password: string) => alert('Your Username: '+ username +'\nPassword: '+ password);
+  const onSubmitUsername = (username: string, password: string) => alert('Email: '+ username +'\nPassword: '+ password);
 
     return (
         <div>

@@ -35,14 +35,13 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
   // }) 
 
   // Passing variables to backend
-  // Will initially print failing message for Sprint 2 since there are no stored users to sign in 
    const response = await fetch('http://localhost:3000/api/signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         FirstName: firstName,
         LastName: lastName,
-        Username: username,
+        Email: username,
         Password: password,
         UserType: userType
       })
