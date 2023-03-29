@@ -20,10 +20,10 @@ func signUp(ctx *gin.Context) {
 	store.Users = append(store.Users, user)
 	
 	// Print user info to verify whether information being passed into database is correct
-	store.PrintUserInfo(user.Username, user.Password)
+	store.PrintUserInfo(user.FirstName, user.LastName, user.Email, user.Password, user.UserType)
 	
 	// Update table by adding new entry into database
-	store.UpdateTable(user.Username, user.Password)
+	store.UpdateTable(user.FirstName, user.LastName, user.Email, user.Password, user.UserType)
 	
 	ctx.JSON(http.StatusOK, gin.H{
 		"msg": "Signed up successfully.",
@@ -53,7 +53,7 @@ func signIn(ctx *gin.Context) {
 	*/
 
 	// Current Verification for Users
-	results := store.Verification(user.Username, user.Password)
+	results := store.Verification(user.FirstName, user.Password) // user.FirstName ==> user.Email
 	if results != nil {
 		fmt.Println("Invalid login credentials provided")
 		ctx.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"err": "Sign in failed."})

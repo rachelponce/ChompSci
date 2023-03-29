@@ -22,6 +22,9 @@
     justify-content: center;
     font-size: 25px;
 }
+.signInText {
+    font-family: 'Source Code Pro', monospace;
+}
 .button {
     display: flex;
     justify-content: center;
