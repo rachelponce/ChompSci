@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Work+Sans:wght@500&display=swap');
 
 html,
 body,
@@ -61,8 +62,9 @@ b { /* used for event dates/times */
   z-index: "99999";
   height: fit-content;  
   font-family: 'Source Code Pro', monospace;
+  background-color: rgb(229, 246, 255);
 }
 
 a {
-  color: #212529; 
+  color: #1a75d0; 
 }
