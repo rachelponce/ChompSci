@@ -6,6 +6,9 @@
 3) Established sign-in verification using database based on user info inputted during sign-up
 
 ## Front-end Unit Testing
+1) Test to check whether the body of the calendar renders
+2) Test to check whether the home page text renders
+3) 
 
 ## Backend Unit Testing
 
