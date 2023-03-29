@@ -1,9 +1,10 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar-elements'
+import './about-page.css';
 
 const About = () => {
     return (
-        <div>
+        <div className='aboutStyle'>
             {/* <Navbar></Navbar> */}
             <div style={{
             display: "flex", 
