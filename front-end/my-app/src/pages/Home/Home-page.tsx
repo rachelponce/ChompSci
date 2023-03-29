@@ -8,10 +8,10 @@ const Home = () => {
 
     return(
         <div className='homepage'>
-            <div className='happening-this-week'>
+            <div data-testid= "picHeader" className='happening-this-week'>
                 <img src={require('../../images/happening-this-week.png')} alt="pic"/>
             </div>
-            <div className='slidey'>
+            <div data-testid="slider" className='slidey'>
                 <ImageSlider slides={SliderData} />
             </div>
         </div>

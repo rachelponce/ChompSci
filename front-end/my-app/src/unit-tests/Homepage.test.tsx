@@ -4,18 +4,33 @@ import '@testing-library/jest-dom'
 import Home from '../pages/Home/Home-page'
 import ImageSlider from '../pages/Home/Slider/Slider'
 
-test('Displays text on the Home Screen', async () => {
-  // ARRANGE
+test('Image header has the correct className', async () => {
   render(<Home />)
-<<<<<<< HEAD
-  // expect(screen.getByRole("heading")).toHaveTextContent('What')
+  const happeningHeader = screen.getByTestId('picHeader'); 
+  expect(happeningHeader).toHaveClass("happening-this-week"); 
 })
-// test('Renders picture slider ', async () => {
-//   // ARRANGE
-//   render(<ImageSlider slides={undefined} />)
-//   expect(screen.getByRole("heading")).toHaveTextContent('Home Page')
-// })
-=======
-  expect(screen.getByRole("text")).toHaveTextContent('Happening this week at UF:')
+
+test('Image header is visible', async () => {
+  render(<Home />)
+  const happeningHeader = screen.getByTestId('picHeader'); 
+  expect(happeningHeader).toBeVisible(); 
 })
->>>>>>> 826257acae2d56049aa455cfa8dc49023bfcd1a3
+
+test('Image header is defined', async () => {
+  render(<Home />)
+  const happeningHeader = screen.getByTestId('picHeader'); 
+  expect(happeningHeader).toBeDefined(); 
+})
+
+test('Slider is rendered', async () => {
+  render(<Home />)
+  const slider = screen.getByTestId('slider'); 
+  expect(slider).toBeDefined(); 
+  expect (slider).toBeVisible(); 
+})
+
+test('Slider has correct class', async () => {
+  render(<Home />)
+  const slider = screen.getByTestId('slider'); 
+  expect(slider).toHaveClass("slidey"); 
+})
