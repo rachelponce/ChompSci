@@ -7,16 +7,14 @@ import { SliderData } from './Slider/SliderData';
 const Home = () => {
 
     return(
-        <>
-        <div className="whats-new">
-            <div className='whats-new-text'>
-                Happening this week at UF:
-             </div>
+        <div className='homepage'>
+            <div className='happening-this-week'>
+            <img src={require('../../images/happening-this-week.png')} alt="pic"/>
+            </div>
+            <div className='slidey'>
+                <ImageSlider slides={SliderData} />
+            </div>
         </div>
-        <div>
-             <ImageSlider slides={SliderData} />
-        </div>
-        </> 
     )
 }
 

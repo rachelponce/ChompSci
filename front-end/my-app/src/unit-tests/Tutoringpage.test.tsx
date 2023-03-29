@@ -6,5 +6,5 @@ import Tutoring from '../pages/Tutoring/Tutoring-page'
 test('Displays text on the Tutoring page', async () => {
 
   render(<Tutoring />)
-  expect(screen.getByRole("heading")).toHaveTextContent('Tutoring Page')
+  expect(screen.getByRole("heading")).toHaveTextContent('Tutoring')
 })
