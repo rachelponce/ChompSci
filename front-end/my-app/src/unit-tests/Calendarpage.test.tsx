@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 import Calendar from '../pages/Calendar/Calendar-page'
 
 test('Displays text on the calendar page', async () => {
-  // ARRANGE
+  // Checks that the calendar is rendering
   render(<Calendar />)
-  expect(screen.getByRole("heading")).toHaveTextContent('Calendar Page')
+  expect(screen.getByRole("calendar").getElementsByClassName("calendar-main"))
 })

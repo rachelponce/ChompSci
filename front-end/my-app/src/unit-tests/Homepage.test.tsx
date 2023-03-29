@@ -6,5 +6,5 @@ import Home from '../pages/Home/Home-page'
 test('Displays text on the Home Screen', async () => {
   // ARRANGE
   render(<Home />)
-  expect(screen.getByRole("heading")).toHaveTextContent('Home Page')
+  expect(screen.getByRole("text")).toHaveTextContent('Happening this week at UF:')
 })

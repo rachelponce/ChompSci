@@ -9,7 +9,7 @@ const Home = () => {
     return(
         <>
         <div className="whats-new">
-            <div className='whats-new-text'>
+            <div role="text" className='whats-new-text'>
                 Happening this week at UF:
              </div>
         </div>
