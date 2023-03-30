@@ -110,9 +110,12 @@ type User struct {
 5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
 
 
-### users.go
+### Function to Interact with Database
 1.	**func PrintUserInfo()**
 This function verifies whether the user information being submitted through the sign-up page of the application is properly being passed to the backend to ensure it is correctly moving forward toward the database as well. The input is the user’s username and password and the output is the printing of these two pieces of data in the server terminal. 
 
 2.	**func UpdateTable()** 
+This function establishes the backend’s connection to the SQLite database using Gorm. The input is the user’s username and password while the output is a modification to the database whether that is creating a new entry, updating, reading, or deleting an entry. The function first determines whether the backend is able to properly connect to the database, otherwise outputting an error. Once the connection is verified, modifications to the database proceed to happen using the user information passed in through the front end.
+
+3.	**func Verification()** 
 This function establishes the backend’s connection to the SQLite database using Gorm. The input is the user’s username and password while the output is a modification to the database whether that is creating a new entry, updating, reading, or deleting an entry. The function first determines whether the backend is able to properly connect to the database, otherwise outputting an error. Once the connection is verified, modifications to the database proceed to happen using the user information passed in through the front end.
