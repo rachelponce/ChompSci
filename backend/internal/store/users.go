@@ -2,19 +2,21 @@ package store
 
 import (
 	"fmt"
-
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	//"gopkg.in/go-playground/validator.v9"
+	"github.com/gin-gonic/gin"
 )
 
 type User struct {
 	gorm.Model
+	//Username string
 	FirstName string `validate:"required,min=2"`
-	LastName  string `validate:"required,min=2"`
+	LastName string `validate:"required,min=2"`
+	// Email 		string 		`validate:"required,excludesall=!#?$%^&*()+-~,email"`
+	// Password 	string 		`validate:"required,min=8,max=25"`
 	Email     string `gorm:"uniqueIndex"`
-	Password  string `gorm:"uniqueIndex"`
-	UserType  int
+	Password string `gorm:"not null"`
+	UserType int
 	// CreatedAt
 	// UpdatedAt
 	// DeletedAt
@@ -57,8 +59,8 @@ func Verification(Email string, Password string) bool {
 
 	//db.First(&user, "email = ? AND password = ?", Email, Password)
 
-	if err := db.Where("email = ? AND password = ?", Email, Password).First(&user).Error; err != nil {
-		return false
+	if err := db.Where("username = ?", FirstName).First(&user).Error; err != nil {
+		return fmt.Errorf("Invalid login credentials provided", err)
 	}
 
 	/*
@@ -74,3 +76,20 @@ func Verification(Email string, Password string) bool {
 	return true
 }
 
+
+func testSetup() {
+	gin.SetMode(gin.TestMode)
+}
+
+// can be used in Tests when valid user needs to be created
+func addTestUser() (*User) {
+	user := &User{
+		FirstName:          "Jane",
+		LastName: 			"Doe",
+		Email:              "email@address.com",
+		Password: 			"password123",
+		UserType: 			1,
+	}
+
+	return user
+}
