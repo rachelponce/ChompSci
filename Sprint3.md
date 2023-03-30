@@ -93,17 +93,12 @@ type User struct {
 }
 ```
 #### Attributes
-**gorm.Model**
-* Includes a unique ID for each user and the times when the user profile was created, updated, and deleted
+1) **gorm.Model**: Includes a unique ID for each user and the times when the user profile was created, updated, and deleted
 
-**First Name**
-* User’s first name
+2) **First Name**: User’s first name
 
-**Last Name**
-* User’s last name
+3) **Last Name**: User’s last name
 
-**Email**
-* User’s UF email address which has the limitation of a being a unique index as not one individual will have the same email as another
+4) **Email**: User’s UF email address which has the limitation of a being a unique index as not one individual will have the same email as another
 
-**Password**
-* User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
+5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
