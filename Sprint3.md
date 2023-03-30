@@ -58,6 +58,65 @@ func TestVerification(t *testing.T) {
 	}
 }
 ```
+2) Testing Sign-In
+```
+func TestRoutingSignIn(t *testing.T) {
+	router := setRouter()
+
+	w := httptest.NewRecorder()
+	
+	/* user := (store.User{
+		FirstName: "Jane",
+		LastName: "Doe",
+		Email: "email@gmail.com",
+		Password: "password123",
+		UserType: 1,
+	}) */
+
+	req := performRequest(router, "POST", "/api/signin", user)
+	assert.Equal(t, 200, w.Code)
+}
+```
+
+4) Testing Sign-Up
+```
+func TestRoutingSignUp(t *testing.T) {
+	router := setRouter()
+
+	w := httptest.NewRecorder()
+
+	/* user := (store.User{
+		FirstName: "Jane",
+		LastName: "Doe",
+		Email: "email@gmail.com",
+		Password: "password123",
+		UserType: 1,
+	}) */
+
+	req := performRequest(router, "POST", "/api/signup", user)
+
+	router.ServeHTTP(w, req)
+	assert.Equal(t, 200, w.Code)
+}
+```
+
+4) Sign-In and Sign Up helper functions NewRequest and performRequest
+```
+func NewRequest(router *gin.Engine, method, path, body string) *http.Request {
+	req, err := http.NewRequest(method, path, strings.NewReader(body))
+	if err != nil {
+		//log.Panic().Err(err).Msg("Error creating new request")
+	}
+	return req
+}
+
+func performRequest(router *gin.Engine, method, path, body string) *httptest.ResponseRecorder {
+	req := NewRequest(router, method, path, body)
+	rec := httptest.NewRecorder()
+	router.ServeHTTP(rec, req)
+	return rec
+}
+```
 
 ## Updated API Documentation 
 ### Introduction
