@@ -110,7 +110,7 @@ type User struct {
 5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
 
 
-### Function to Interact with Database
+### Functions to Interact with Database
 1.	**func PrintUserInfo()**
 This function verifies whether the user information being submitted through the sign-up page of the application is properly being passed to the backend to ensure it is correctly moving forward toward the database as well. The input is the user’s username and password and the output is the printing of these two pieces of data in the server terminal. 
 
