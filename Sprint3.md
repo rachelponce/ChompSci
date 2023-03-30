@@ -73,7 +73,7 @@ api.POST("/signup", signUp)
 When a user seeks to sign up with Chomp Sci and make an account in our application, a User object is created with parameters including their first name, last name, UF email address, password, and user type. This user information is then stored on a table using SQLite as the database engine. 
 
 **func signUp()**
-This function establishes the connection between the front end and the back end as related to the sign-up page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is either an error if binding fails and the connection between the front end and back end is not made, or a message and a JSON Web Token (JWT) for authentication. In addition, if connection is successful, entry will use PrintUserInfo() and UpdateTable() to move that data into the database and essentially store that user’s information as a valid user of the web application.
+This function establishes the connection between the front end and the back end as related to the sign-up page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is either an error if binding fails and the connection between the front end and back end is not made, or a message and a JSON Web Token (JWT) for authentication. In addition, if connection is successful, entry will use the functions  PrintUserInfo() and UpdateTable() to move that data into the database and essentially store that user’s information as a valid user of the web application.
 
 ### Sign In
 ```
