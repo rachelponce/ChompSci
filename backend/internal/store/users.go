@@ -47,19 +47,30 @@ func UpdateTable(FirstName string, LastName string, Email string, Password strin
 }
 
 // verifying Email, since duplicate names are possible
-func Verification(Email string, Password string) error {
+func Verification(Email string, Password string) bool {
 	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
 	var user User
-	db.First(&user, "email = ?", Email) // Find user with email provided in parameter
 
-	if err := db.Where("email = ?", Email).First(&user).Error; err != nil {
-		return fmt.Errorf("Invalid login credentials provided", err)
+	//db.First(&user, "email = ? AND password = ?", Email, Password)
+
+	if err := db.Where("email = ? AND password = ?", Email, Password).First(&user).Error; err != nil {
+		return false
 	}
 
+	/*
+
+		db.First(&user, "email = ?", Email) // Find user with email provided in parameter
+
+		if err := db.Where("email = ?", Email).First(&user).Error; err != nil {
+			return false
+		}
+	*/
+
 	println("User found")
-	return nil
+	return true
 }
+
