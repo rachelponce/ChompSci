@@ -60,3 +60,35 @@ func TestVerification(t *testing.T) {
 ```
 
 ## Updated API Documentation 
+### Introduction
+The Chomp Sci API is organized around REST. Our API accepts form-encoded requests, returns JSON-encoded responses, and uses standard HTTP response codes and authentication.
+
+### Errors
+Chomp Sci uses conventional HTTP response codes to indicate the success or failure of an API request. The two main codes used for this application are 201 and 401. The 201 HTTP status code indicates that a new resource was successfully created as a result of a valid request. The 401 HTTP status code is returned when the user provides invalid or no credentials in a request. 
+
+### Sign Up
+```
+api.POST("/signup", signUp)
+```
+When a user seeks to sign up with Chomp Sci and make an account in our application, a User object is created with parameters including their first name, last name, UF email address, password, and user type. This user information is then stored on a table using SQLite as the database engine. 
+
+### Sign In
+```
+api.POST("/signin", signIn)
+```
+Once a user has signed up and created an account, they are able to sign in to the platform where they can access their personal dashboard with more information about them and are granted more functionality across the application. In this process, users will input two of the five parameters they input when first signing up, their UF email and their password. This information will be passed to the backend and compared with the information stored in the database. If both the email and password exist and belong to the same user, the user will be verified as a valid user logging in.
+
+### User Object
+```
+type User struct {
+	gorm.Model
+	FirstName string `validate:"required,min=2"`
+	LastName  string `validate:"required,min=2"`
+	Email     string `gorm:"uniqueIndex"`
+	Password  string `gorm:"uniqueIndex"`
+	UserType  int
+	// CreatedAt
+	// UpdatedAt
+	// DeletedAt
+}
+```
