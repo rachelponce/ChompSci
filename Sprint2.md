@@ -17,6 +17,7 @@
 * Unit tests for the backend were created using Go and Gin's standard testing libraries. In future sprints, we will work on creating more advanced tests to detect more minor issues that may have gone unnoticed in our current tests. We will also be creating tests to examine our database's processing of user information to ensure that all information is correct and being stored properly for all front end requests made.
 
 // setRouter() -> /api/signIn, testing POST route to router
+```
 func TestRoutingSignIn(t *testing.T) {
 	router := setRouter()
 
@@ -34,8 +35,10 @@ func TestRoutingSignIn(t *testing.T) {
 	// Result should equal success code 200
 	assert.Equal(t, 200, w.Code)
 }
+```
 
 // setRouter() -> /api/signUp, testing POST route to router
+```
 func TestRoutingSignUp(t *testing.T) {
 	router := setRouter()
 
@@ -47,7 +50,8 @@ func TestRoutingSignUp(t *testing.T) {
 	router.ServeHTTP(w, req)
 	assert.Equal(t, 200, w.Code)
 }
-
+```
+```
 func TestSignUp(t *testing.T) {
 	// pass in our own username and password using
 	//store.User.Username
@@ -58,6 +62,7 @@ func TestSignUp(t *testing.T) {
 	// redundant, statement does not have return 
 	assert.Equal(t, string("Signed up successfully."), "Signed up successfully.")
 }
+```
 
 ## API Documentation 
 ### router.go
