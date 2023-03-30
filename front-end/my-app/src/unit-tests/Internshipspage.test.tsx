@@ -6,5 +6,5 @@ import Internships from '../pages/Internships/Internships-page'
 test('Displays text on the internships page', async () => {
   // ARRANGE
   render(<Internships />)
-  expect(screen.getByRole("heading")).toHaveTextContent('Internships Page')
+  expect(screen.getByRole("heading")).toHaveTextContent('Internships')
 })

@@ -112,17 +112,18 @@
     background-color: #282c34;
     height: 20vh; 
     width: 100%; 
-    display: flex; 
+    /* display: flex;  */
 }
 .whats-new-text {
     color: white; 
     margin-top: 40px; 
     margin-left: 100px;
     font-size: 60px;
+    height: 20vh; 
     /* height: 20vh;  */
     font-style: italic; 
-    animation-name: moveRight; 
-    animation-duration: 1.3s;
+    /* animation-name: moveRight; 
+    animation-duration: 1.3s; */
     
 }
 .home-image {
@@ -147,7 +148,25 @@
     text-align: center;
   }
 
-  /* .slider {
-    animation-name: moveRight; 
+  .slidey {
+    align-items: center;
+    animation-name: moveUp; 
+    animation-duration: 1s;
+  }
+
+  .happening-this-week {
+    display: flex; 
+    justify-content: center; 
+    /* margin-top: 50px; */
+    align-items: center; 
+    background-color: #282c34;
+    /* margin-bottom: 30px; */
+    animation-name: moveUp; 
     animation-duration: 0.7s;
-  } */
+  }
+  .homepage{
+    background-color: #282c34;
+    /* height: 90vh;  */
+    width: 100%; 
+    /* height: 100vh;  */
+  }

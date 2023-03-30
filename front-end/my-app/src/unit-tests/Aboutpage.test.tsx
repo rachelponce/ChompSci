@@ -4,7 +4,6 @@ import '@testing-library/jest-dom'
 import About from '../pages/About/About-page'
 
 test('Displays text on the About page', async () => {
-  // ARRANGE
   render(<About />)
-  expect(screen.getByRole("heading")).toHaveTextContent('About Page')
+  expect(screen.getByRole("heading")).toHaveTextContent('About')
 })

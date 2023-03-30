@@ -9,11 +9,17 @@ import (
 
 type User struct {
 	gorm.Model
-	FirstName 	string 		`validate:"required,alpha,min=2"`
-	LastName 	string 		`validate:"required,alpha,min=2"`
-	Email 		string 		`validate:"required,excludesall=!#?$%^&*()+-~,email"`
-	Password 	string 		`validate:"required,min=8,max=25"`
-	UserType 	int
+	//Username string
+	FirstName string `validate:"required,min=2"`
+	LastName string `validate:"required,min=2"`
+	// Email 		string 		`validate:"required,excludesall=!#?$%^&*()+-~,email"`
+	// Password 	string 		`validate:"required,min=8,max=25"`
+	Email     string `gorm:"uniqueIndex"`
+	Password string `gorm:"not null"`
+	UserType int
+	// CreatedAt
+	// UpdatedAt
+	// DeletedAt
 }
 
 var Users []*User
@@ -32,7 +38,7 @@ func UpdateTable(FirstName string, LastName string, Email string, Password strin
 
 	// Create
 	//db.Create(&User{Username: Username, Password: Password})
-	db.Create(&User{FirstName: FirstName, LastName:LastName, Email:Email, Password: Password, UserType: UserType})
+	db.Create(&User{FirstName: FirstName, LastName: LastName, Email: Email, Password: Password, UserType: UserType})
 
 	var user User
 	db.First(&user, 1) // first row in table ordered by ID
@@ -43,23 +49,33 @@ func UpdateTable(FirstName string, LastName string, Email string, Password strin
 }
 
 // verifying Email, since duplicate names are possible
-func Verification(FirstName string, Password string) error {
+func Verification(Email string, Password string) bool {
 	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
-	// need to adjust to check Email
 	var user User
-	db.First(&user, "username = ?", FirstName)
+
+	//db.First(&user, "email = ? AND password = ?", Email, Password)
 
 	if err := db.Where("username = ?", FirstName).First(&user).Error; err != nil {
-		//return fmt.Errorf("Invalid login credentials provided", err)
+		return fmt.Errorf("Invalid login credentials provided", err)
 	}
 
+	/*
+
+		db.First(&user, "email = ?", Email) // Find user with email provided in parameter
+
+		if err := db.Where("email = ?", Email).First(&user).Error; err != nil {
+			return false
+		}
+	*/
+
 	println("User found")
-	return nil
+	return true
 }
+
 
 func testSetup() {
 	gin.SetMode(gin.TestMode)
