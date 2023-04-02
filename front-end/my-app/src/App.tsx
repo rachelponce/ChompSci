@@ -5,7 +5,7 @@ import Home from './pages/Home/Home-page'
 import About from './pages/About/About-page'
 import Calendar from './pages/Calendar/Calendar-page';
 import Internships from './pages/Internships/Internships-page';
-import Tutoring from './pages/Tutoring/Tutoring-page';
+import Opportunities from './pages/Opportunities/Opportunities-page';
 import SignIn from './pages/SignIn/Signin-page';
 import SignUp from './pages/SignUp/Signup-page';
 import Landing from './pages/Landing/Landing'
@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={ <Landing/> }></Route>
         <Route path="/home" element={ <Home/> }></Route>
         <Route path="/about" element={ <About/> }></Route>
-        <Route path="/tutoring" element={ <Tutoring/> }></Route>
+        <Route path="/opportunities" element={ <Opportunities/> }></Route>
         <Route path="/internships" element={ <Internships/> }></Route>
         <Route path="/calendar" element={ <Calendar/> }></Route>
         <Route path="/signin" element={ <SignIn/> }></Route>

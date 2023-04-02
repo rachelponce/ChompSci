@@ -18,8 +18,8 @@ const Navbar = () => {
                 <NavLink to="/calendar">
                      calendar 
                 </NavLink>
-                <NavLink to="/tutoring">
-                     tutoring
+                <NavLink to="/opportunities">
+                     opportunities
                 </NavLink>
                 <NavLink to="/internships">
                      internships
