@@ -54,7 +54,7 @@ func signIn(ctx *gin.Context) {
 
 	// Current Verification for Users
 	results := store.Verification(user.Email, user.Password)
-	if results != nil {
+	if results != true {
 		fmt.Println("Invalid login credentials provided")
 		ctx.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"err": "Sign in failed."})
 		return
