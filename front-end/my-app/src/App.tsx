@@ -4,7 +4,6 @@ import './App.css';
 import Home from './pages/Home/Home-page'
 import About from './pages/About/About-page'
 import Calendar from './pages/Calendar/Calendar-page';
-import Internships from './pages/Internships/Internships-page';
 import Opportunities from './pages/Opportunities/Opportunities-page';
 import SignIn from './pages/SignIn/Signin-page';
 import SignUp from './pages/SignUp/Signup-page';
@@ -23,7 +22,6 @@ function App() {
         <Route path="/home" element={ <Home/> }></Route>
         <Route path="/about" element={ <About/> }></Route>
         <Route path="/opportunities" element={ <Opportunities/> }></Route>
-        <Route path="/internships" element={ <Internships/> }></Route>
         <Route path="/calendar" element={ <Calendar/> }></Route>
         <Route path="/signin" element={ <SignIn/> }></Route>
         <Route path="/signup" element={ <SignUp/> }></Route>
