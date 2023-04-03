@@ -62,7 +62,6 @@ func Verification(Email string, Password string) bool {
 	}
 
 	/*
-
 		db.First(&user, "email = ?", Email) // Find user with email provided in parameter
 
 		if err := db.Where("email = ?", Email).First(&user).Error; err != nil {
