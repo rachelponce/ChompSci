@@ -1,3 +1,5 @@
 A 64-bit mingw is necessary to compile the sqlite gorm drivers.
 Visit link below for assitance : 
 https://stackoverflow.com/questions/30069830/how-can-i-install-mingw-w64-and-msys2
+
+go get github.com/mattn/go-sqlite3
