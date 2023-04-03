@@ -15,7 +15,7 @@ type User struct {
 	// Email 		string 		`validate:"required,excludesall=!#?$%^&*()+-~,email"`
 	// Password 	string 		`validate:"required,min=8,max=25"`
 	Email     string `gorm:"uniqueIndex"`
-	Password string `gorm:"not null"`
+	Password  string `gorm:"uniqueIndex"`
 	UserType int
 	// CreatedAt
 	// UpdatedAt
