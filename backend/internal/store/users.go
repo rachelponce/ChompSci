@@ -15,7 +15,7 @@ type User struct {
 	// Email 		string 		`validate:"required,excludesall=!#?$%^&*()+-~,email"`
 	// Password 	string 		`validate:"required,min=8,max=25"`
 	Email     string `gorm:"uniqueIndex"`
-	Password string `gorm:"not null"`
+	Password  string `gorm:"uniqueIndex"`
 	UserType int
 	// CreatedAt
 	// UpdatedAt
@@ -57,14 +57,11 @@ func Verification(Email string, Password string) bool {
 
 	var user User
 
-	//db.First(&user, "email = ? AND password = ?", Email, Password)
-
-	if err := db.Where("username = ?", Email).First(&user).Error; err != nil {
+	if err := db.Where("email = ? AND password = ?", Email, Password).First(&user).Error; err != nil {
 		return false
 	}
 
 	/*
-
 		db.First(&user, "email = ?", Email) // Find user with email provided in parameter
 
 		if err := db.Where("email = ?", Email).First(&user).Error; err != nil {
