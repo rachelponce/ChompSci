@@ -59,8 +59,8 @@ func Verification(Email string, Password string) bool {
 
 	//db.First(&user, "email = ? AND password = ?", Email, Password)
 
-	if err := db.Where("username = ?", FirstName).First(&user).Error; err != nil {
-		return fmt.Errorf("Invalid login credentials provided", err)
+	if err := db.Where("username = ?", Email).First(&user).Error; err != nil {
+		return false
 	}
 
 	/*
