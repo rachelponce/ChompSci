@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar-elements'
+import './Opportunities.css'
 
 const Opportunities = () => {
     return (
         <div>
-            {/* <Navbar></Navbar> */}
+            
             <div style={{
             display: "flex", 
             justifyContent: "center", 
