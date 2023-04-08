@@ -24,5 +24,5 @@
   "include": [
     "src", 
     "**/*.ts"
-, "src/Footer.test.tsx", "jest.config.js"  ]
+, "src/Footer.test.tsx", "jest.config.js" ]
 }

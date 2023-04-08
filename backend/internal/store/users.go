@@ -57,7 +57,13 @@ func Verification(Email string, Password string) bool {
 
 	var user User
 
+<<<<<<< Updated upstream
 	if err := db.Where("email = ? AND password = ?", Email, Password).First(&user).Error; err != nil {
+=======
+	//db.First(&user, "email = ? AND password = ?", Email, Password)
+
+	if err := db.Where("username = ?", Email).First(&user).Error; err != nil {
+>>>>>>> Stashed changes
 		return false
 	}
 
