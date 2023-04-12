@@ -7,7 +7,7 @@ import './signin-style.css';
 
 export const SignIn = () => {
   // need to pass username & password parameters to backend
-  const onSubmitUsername = (username: string, password: string) => alert('Your Username: '+ username +'\nPassword: '+ password);
+  const onSubmitUsername = (username: string, password: string) => console.log(username + password);
 
     return (
         <div>

@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, redirect } from 'react-router-dom'
 import './signin-style.css';
 
 export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
@@ -34,6 +34,13 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
     const content = await response.json();
 
     console.log(content);
+    if (content.msg.includes("successful")) {// Redirects to user page upon successful login 
+      console.log("Yaaaay")
+      const userid = "hehehe"
+      /// /user/:username
+      // navigate('/user', {replace: true}); 
+      window.location.replace('/user/:userid');
+    }
   }
 
   function handleChangeUsername(event: { target: { value: string; }; }) {
