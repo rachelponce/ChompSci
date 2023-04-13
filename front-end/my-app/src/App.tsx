@@ -8,15 +8,19 @@ import Opportunities from './pages/Opportunities/Opportunities-page';
 import SignIn from './pages/SignIn/Signin-page';
 import SignUp from './pages/SignUp/Signup-page';
 import Landing from './pages/Landing/Landing'
-import Navbar from './components/Navbar/Navbar-elements';
+import NavbarNSI from './components/Navbar/Navbar-NotSignedIn';
+import NavbarSI from './components/Navbar/Navbar-SignedIn';
 import Footer from './components/Footer/Footer'
 // import Navbar from './components/Navbar/Navbar'
 
 function App() {
+  var loginFormVar = require("./pages/SignIn/LoginForm")
+  var signedIn1 = loginFormVar.signedIn; 
+  console.log("signed in status: " + signedIn1)
   return (
     <div className="generalText">
     <Router>
-      <Navbar />
+      {signedIn1?<NavbarSI/>:<NavbarNSI />} 
       <Routes>
         <Route path="/" element={ <Landing/> }></Route>
         <Route path="/home" element={ <Home/> }></Route>

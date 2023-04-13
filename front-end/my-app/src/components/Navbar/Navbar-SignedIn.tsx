@@ -1,8 +1,8 @@
 import React from 'react'
 import "../../App.css"
-import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './Navbar-index'
+import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './Navbar-NotSignedInCSS'
 
-const Navbar = () => {
+const NavbarSI = () => {
     return (
      <div className="generalText">
         <>
@@ -21,12 +21,6 @@ const Navbar = () => {
                 <NavLink to="/opportunities">
                      opportunities
                 </NavLink>
-                <NavLink to="/signup">
-                     signUp
-                </NavLink>
-                <NavBtnLink to="/signin">
-                     signIn 
-                </NavBtnLink>
             </NavMenu>
             {/* <NavBtn> */}
                 {/* <NavBtnLink to="/signin">
@@ -39,7 +33,7 @@ const Navbar = () => {
     )
 }
 
-export default Navbar; 
+export default NavbarSI; 
 
 // npm install styled-components
 // npm install react-router-dom react-icons

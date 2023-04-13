@@ -1,11 +1,17 @@
 import React, { SyntheticEvent, useEffect } from 'react';
 import { Link, useNavigate, redirect } from 'react-router-dom'
+import { useSignIn } from 'react-auth-kit';
 import './signin-style.css';
 
+ 
 export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [isDisabled, setIsDisabled] = React.useState(true);
+  const [error, setError] = React.useState(''); 
+  const [isSignedIn, setIsSignedIn] = React.useState(false);
+  // exports.signedIn = isSignedIn; 
+   
 
   async function handleSubmit(event: { preventDefault: () => void; }) {
     event.preventDefault();
@@ -32,14 +38,18 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
     });
 
     const content = await response.json();
+  
 
     console.log(content);
-    if (content.msg.includes("successful")) {// Redirects to user page upon successful login 
-      console.log("Yaaaay")
-      const userid = "hehehe"
+    if (content.msg) {// Redirects to user page upon successful login 
+      setError("")
+      setIsSignedIn(true);  
       /// /user/:username
       // navigate('/user', {replace: true}); 
       window.location.replace('/user/:userid');
+    }
+    else {
+      setError("Invalid Username or Password" )
     }
   }
 
@@ -60,12 +70,15 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
   }, [username, password]);
 
   return (
+    
     //formatting of login page: username/input box,password/input box, button
     <form onSubmit={handleSubmit}>
       <div className="signInText">
         <div className="header">
           <p>Sign In:</p>
           </div>
+          {error?<label>{error}</label>:null}
+          {error?<p></p>:null}
           <label htmlFor="username-input">UF Email: </label>
           <input
             id="username-input"
@@ -98,4 +111,4 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
   );
 };
 
-export default LoginForm;
+export default LoginForm
