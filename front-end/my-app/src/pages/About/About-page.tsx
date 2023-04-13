@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Navbar from '../../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-NotSignedIn'
 import './about-page.css';
 import '../../App.css';
 import Sav from './../../images/savannahAvatar.png';

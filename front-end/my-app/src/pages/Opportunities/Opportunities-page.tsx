@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-NotSignedIn'
 import './Opportunities.css'
 
 const Opportunities = () => {
