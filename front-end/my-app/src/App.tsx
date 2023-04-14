@@ -11,6 +11,7 @@ import Landing from './pages/Landing/Landing'
 import NavbarNSI from './components/Navbar/Navbar-NotSignedIn';
 import NavbarSI from './components/Navbar/Navbar-SignedIn';
 import Footer from './components/Footer/Footer'
+import Profile from './pages/Profile/Profile';
 // import Navbar from './components/Navbar/Navbar'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/calendar" element={ <Calendar/> }></Route>
         <Route path="/signin" element={ <SignIn/> }></Route>
         <Route path="/signup" element={ <SignUp/> }></Route>
+        <Route path="/user/:userid" element={ <Profile/>}></Route>
       </Routes>
       <Footer />
     </Router>
