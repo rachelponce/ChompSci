@@ -1,3 +1,4 @@
+
 {
   "name": "my-app",
   "version": "0.1.0",
@@ -8,7 +9,6 @@
       ".localhost"
     ]
   },
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -28,6 +28,7 @@
     "@types/react-router-dom": "^5.3.3",
     "bootstrap": "^4.6.2",
     "react": "^18.2.0",
+    "react-auth-kit": "^2.11.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-responsive-carousel": "^3.2.23",

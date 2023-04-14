@@ -1,14 +1,14 @@
 import React from 'react'
-import Navbar from '../../components/Navbar/Navbar-elements'
+import Navbar from '../../components/Navbar/Navbar-NotSignedIn'
 // import React, { Component } from "react";
 import { render } from 'react-dom';
-import LoginForm from './LoginForm';
+import {LoginForm} from './LoginForm';
 import './signin-style.css';
 
 export const SignIn = () => {
   // need to pass username & password parameters to backend
-  const onSubmitUsername = (username: string, password: string) => alert('Your Username: '+ username +'\nPassword: '+ password);
-
+  const onSubmitUsername = (username: string, password: string) => console.log(username + password);
+  
     return (
         <div>
             <div className="box">

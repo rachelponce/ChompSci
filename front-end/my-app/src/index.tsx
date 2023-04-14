@@ -3,7 +3,6 @@ import {render} from "react-dom"
 import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Calendar from './pages/Calendar/Calendar-page';
 import App from "./App"
 import reportWebVitals from './other/reportWebVitals';
 
