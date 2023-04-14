@@ -1,0 +1,9 @@
+.heading{
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.profile{
+    color: black;
+}
