@@ -1,0 +1,103 @@
+.opportunitiesStyle{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+.blog {
+    display: flex;
+    justify-content: center;
+}
+.blogBox{
+    /* display: block;
+    justify-content: center; */
+    /* flex-wrap: wrap; */
+    width: 70vw;
+    min-height: 70vh;
+    border-radius: 30px;
+    background: #fcfcfc;
+    box-shadow:  10px 10px 20px #151515,
+             -10px -10px 20px #242424;
+    
+}
+.gap{
+    height: 30px;
+}
+.bubbleSpacing{
+    width: 70vw;
+    display: block;
+    padding: 15px 15px;
+}
+.bubble {
+    min-height: 50px;
+    --r: 25px; /* the radius */
+    --t: 30px; /* the size of the tail */
+    color: rgb(61, 61, 61);
+    /* min-width: 60vw; */
+    /* max-width: 65vw; */
+    padding: calc(2*var(--r)/3);
+    -webkit-mask: 
+        radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+        var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+        conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+        calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+        radial-gradient(50% 50%,#000 98%,#0000 101%) 
+        0 0/var(--r) var(--r) space padding-box;
+    background: #e0e0e0;
+    font-size: 15px;
+}
+.left {
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    margin-right: var(--t);
+    place-self: start;
+}
+
+.input {
+    min-height: 70px;
+    width: 100%;
+    background: #e7e7e7;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border-color: rgb(175, 175, 175);
+    border-width: 2px;
+    border-style: solid;
+}
+button {
+    font-size: 16px;
+    position: relative;
+    margin: auto;
+    padding: 1em 2.5em 1em 2.5em;
+    border: none;
+    background: #fff;
+    transition: all 0.1s linear;
+    box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+   }
+   
+   button:active {
+    transform: scale(0.95);
+   }
+   
+   button span {
+    color: #464646;
+   }
+   
+   button .border {
+    position: absolute;
+    border: 0.15em solid #fff;
+    transition: all 0.3s 0.08s linear;
+    top: 50%;
+    left: 50%;
+    width: 9em;
+    height: 3em;
+    transform: translate(-50%, -50%);
+   }
+   
+   button:hover .border {
+    display: block;
+    width: 9.9em;
+    height: 3.7em;
+   }
+   
+   .full-rounded {
+    border-radius: 2em;
+   }
