@@ -8,16 +8,12 @@
     justify-content: center;
 }
 .blogBox{
-    /* display: block;
-    justify-content: center; */
-    /* flex-wrap: wrap; */
     width: 70vw;
     min-height: 70vh;
     border-radius: 30px;
     background: #fcfcfc;
     box-shadow:  10px 10px 20px #151515,
              -10px -10px 20px #242424;
-    
 }
 .gap{
     height: 30px;

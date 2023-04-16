@@ -11,7 +11,7 @@ const MessageForm = ({ onSubmit }: {onSubmit:any}) => {
         setMessage('');
         setIsDisabled(true);
     
-        const response = await fetch('http://localhost:3000/api/signin', {
+        const response = await fetch('http://localhost:3000/api/opportunities', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
