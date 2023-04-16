@@ -12,6 +12,7 @@ import NavbarNSI from './components/Navbar/Navbar-NotSignedIn';
 import NavbarSI from './components/Navbar/Navbar-SignedIn';
 import Footer from './components/Footer/Footer'
 import Profile from './pages/Profile/Profile';
+import AddEvent from './pages/Calendar/Add-Event';
 // import Navbar from './components/Navbar/Navbar'
 
 function App() {
