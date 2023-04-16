@@ -1,5 +1,5 @@
 import React, { SyntheticEvent, useEffect } from 'react';
-import { Link, useNavigate, redirect } from 'react-router-dom'
+import { Link, useNavigate, redirect, useParams } from 'react-router-dom'
 import { useSignIn } from 'react-auth-kit';
 import './signin-style.css';
 
@@ -10,6 +10,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
   const [isDisabled, setIsDisabled] = React.useState(true);
   const [error, setError] = React.useState(''); 
   const [isSignedIn, setIsSignedIn] = React.useState(false);
+  
   // exports.signedIn = isSignedIn; 
    
 
@@ -19,6 +20,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
     setUsername('');
     setPassword('');
     setIsDisabled(true);
+    
 
   // Useful for catching errors in console
   //  console.log({
@@ -44,9 +46,8 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
     if (content.msg) {// Redirects to user page upon successful login 
       setError("")
       setIsSignedIn(true);  
-      /// /user/:username
-      // navigate('/user', {replace: true}); 
-      window.location.replace('/user/:userid');
+      var str = username.replace("@ufl.edu", "")
+      window.location.replace('/user/' + str);
     }
     else {
       setError("Invalid Username or Password" )
