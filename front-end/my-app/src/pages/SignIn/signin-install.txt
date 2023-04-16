@@ -1,1 +1,2 @@
 npm i react-auth-kit
+npm install reactjs-popup --save

@@ -14,21 +14,19 @@ import { INITIAL_EVENTS, createEventId } from '../Calendar/event-utils'
 import * as bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from 'react' 
+import {Link} from "react-router-dom"
+// import { eventM } from "./Add-Event"
+// import AddEvent from "./Add-Event"
+import AddEventForm from './AddEventForm'
+import AddEvent from './Add-Event'
+import e from 'express'
 
 
-interface DemoAppState {
-  weekendsVisible: boolean
-  currentEvents: EventApi[]
-}
+export default class Calendar extends React.Component {
 
-export default class Calendar extends React.Component<{}, DemoAppState> {
+calendarRef: any = React.createRef()
 
-sidebarEventTitle:  string = "Default event"; 
-sidebarEventDate: string = "Default date"
-sidebarEventTime: string = "Default time"; 
-sidebarEventLocation: string = "Default location";
-
-  state: DemoAppState = {
+state = {
     weekendsVisible: true,
     currentEvents: []
   }
@@ -36,9 +34,11 @@ sidebarEventLocation: string = "Default location";
   render() {
     return (
       <div className='calendar'>
-        {this.renderSidebar()}
+        {/* {this.renderSidebar()} */}
         <div className='calendar-main' role='calendar'>
+        <Link to="/calendar/add-event"><button>Add New Event</button></Link>
           <FullCalendar
+            ref={this.calendarRef}
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             headerToolbar={{
               left: 'prev,next today',
@@ -46,26 +46,26 @@ sidebarEventLocation: string = "Default location";
               right: 'dayGridMonth,timeGridWeek,timeGridDay'
             }}
             
-            events={[
-              {
-                title: "WiCSE GBM #3", 
-                date: "2023-03-22T18:30:00", // for calendar
-                location: "MCAAG186",
-                url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
-                description: "Our GBM #3 is on Wednesday, March 22 @ 6:30pm in MCCA G186 with GOOGLE!! Ever wonder what software engineers do at Google? Join us to listen about a day in the life of a software engineer at Google while enjoying Panda Express and club updates! See you there!", 
-                customTime: "Wednesday, March 22nd at 6:30pm", // for hover popup 
-                club: "Women in Computer Science and Engineering"
-              }, 
-              {
-                title: "National Chomp Sci Day", 
-                date: "2023-03-29T05:00:00",
-                location: "CSE221", 
-                url: "/", 
-                description: "Test event for the chomp sci girliepops", 
-                customTime: "Wednesday, March 29th at 5:00am", 
-                club: "Chomp-Sci"
-              }, 
-            ]}
+            // events={[
+            //   {
+            //     title: "WiCSE GBM #3", 
+            //     date: "2023-03-22T18:30:00", // for calendar
+            //     location: "MCAAG186",
+            //     url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
+            //     description: "Our GBM #3 is on Wednesday, March 22 @ 6:30pm in MCCA G186 with GOOGLE!! Ever wonder what software engineers do at Google? Join us to listen about a day in the life of a software engineer at Google while enjoying Panda Express and club updates! See you there!", 
+            //     customTime: "Wednesday, March 22nd at 6:30pm", // for hover popup 
+            //     club: "Women in Computer Science and Engineering"
+            //   }, 
+            //   {
+            //     title: "National Chomp Sci Day", 
+            //     date: "2023-03-29T05:00:00",
+            //     location: "CSE221", 
+            //     url: "/", 
+            //     description: "Test event for the chomp sci girliepops", 
+            //     customTime: "Wednesday, March 29th at 5:00am", 
+            //     club: "Chomp-Sci"
+            //   }, 
+            // ]}
             initialView='dayGridMonth'
             editable={true}
             selectable={true}
@@ -114,6 +114,20 @@ sidebarEventLocation: string = "Default location";
       </div>
     )
   }
+  // addAnEvent() { 
+  //   let calendarApi = this.calendarRef.current.getApi()
+  //   calendarApi.addEvent({
+  //     id: "", 
+  //     title: Title,
+  //     date: e.date, 
+  //     location: e.location, 
+  //     club: e.club, 
+  //     url: e.url, 
+  //     description: e.description
+  //   })
+  //   console.log("success event thingie")
+  // }
+  
 
   renderSidebar() {
     return (
@@ -128,6 +142,18 @@ sidebarEventLocation: string = "Default location";
       </div>
     )
   }
+
+  // addAnEvent = (c: Calendar, e:eventM, events: EventApi[]) => {
+  //   var newEvent = Event; 
+  //   newEvent.title = 
+  //   }
+
+  // handleEvents = (events: EventApi[], e:eventM) => {
+  //   events.push(e); 
+  //   this.setState({
+  //     currentEvents: events
+  //   })
+  // }
 
   handleWeekendsToggle = () => {
     this.setState({
@@ -156,33 +182,18 @@ sidebarEventLocation: string = "Default location";
     // if (window.confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
     //   clickInfo.event.remove()
     // }
-    this.setEventTitle(clickInfo.event.title); 
-    console.log(this.sidebarEventTitle); 
+    // this.setEventTitle(clickInfo.event.title); 
+    // console.log(this.sidebarEventTitle); 
     this.renderSidebar();  
     
   }
 
-  handleEvents = (events: EventApi[]) => {
-    this.setState({
-      currentEvents: events
-    })
+  onEventAdded = (event: any) => {
+    const api = this.calendarRef.current.getApi(); 
+    api.addEvent(event); 
   }
 
-  setEventTitle = (title: string) => {
-    this.sidebarEventTitle = title; 
-  }
-
-  setEventDate = (date: string) => {
-    this.sidebarEventDate = date; 
-  }
-
-  setEventTime = (time: string) => {
-    this.sidebarEventTime = time; 
-  }
-
-  setEventLocation = (location: string) => {
-    this.sidebarEventLocation = location; 
-  }
+  
 }
 
 function renderEventContent(eventContent: EventContentArg) {
@@ -202,6 +213,8 @@ function renderSidebarEvent(event: EventApi) {
     </li>
   )
 }
+
+
 
 /* {/* <ul>
             <li>Select dates and you will be prompted to create a new event</li>
@@ -225,3 +238,7 @@ function renderSidebarEvent(event: EventApi) {
         {this.state.currentEvents.map(renderSidebarEvent)}
         //   </ul>
         // </div> */}
+
+function someMethod() {
+  throw new Error('Function not implemented.')
+}
