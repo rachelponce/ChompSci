@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SliderData } from './SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import "./Slider.css"
+import { Link } from 'react-router-dom';
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -30,7 +31,21 @@ const ImageSlider = ({ slides }) => {
             key={index}
           >
             {index === current && (
-              <img src={slide.image} alt='travel image' className='image' />
+              <div>
+                <div className='item'>
+                  <img src={slide.image} alt='travel image' className='image' />
+                </div>
+                <div className='item'>
+                  <div className='text-container-header'>
+                    {slide.club}
+                    <div className="text-body">
+                      <p>{slide.description}</p> 
+                      <p></p>
+                      See this event in the <Link to="/calendar">calendar!</Link>
+                    </div>
+                    </div>
+                </div>
+              </div>
             )}
           </div>
         );

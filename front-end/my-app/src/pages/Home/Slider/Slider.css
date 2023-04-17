@@ -1,10 +1,10 @@
 .slider {
     position: relative;
     height: 100vh;
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
-    background-color: #282c34;
+    /* margin-right: 90vh; */
   }
   
   .image {
@@ -16,7 +16,7 @@
   .right-arrow {
     position: absolute;
     top: 50%;
-    right: 300px;
+    right: 10vh;
     font-size: 3rem;
     color: white; 
     z-index: 10;
@@ -27,7 +27,7 @@
   .left-arrow {
     position: absolute;
     top: 50%;
-    left: 300px;
+    left: 10vh;
     font-size: 3rem;
     color: white;
     z-index: 10;
@@ -44,4 +44,30 @@
     opacity: 1;
     transition-duration: 1s;
     transform: scale(1.08);
+  }
+
+  .item {
+    display: inline-block; 
+    padding: 1rem 1rem; 
+    vertical-align: middle;
+    background-color: #282c34;
+    margin-left: 100px;
+  }
+
+  .text-container-header {
+    border-radius: 20px;
+    background: #ffffff;
+    height: 500px; 
+    width: 400px; 
+    text-align: center;
+    line-height: 90px; 
+    box-shadow:  10px 10px 17px #202020, -10px -10px 17px #202020;
+    color: black; 
+    font-size: 30px;
+    margin: 30px; 
+  }
+  .text-body  {
+    font-size: 15px; 
+    line-height: 25px; 
+    margin: 20px; 
   }
