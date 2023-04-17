@@ -20,6 +20,5 @@ export const SignIn = () => {
     );
 };
 
-// render(<SignIn/>, document.getElementById('root')); //breaks everything for some reason....
 
 export default SignIn;
