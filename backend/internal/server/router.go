@@ -19,6 +19,7 @@ func setRouter() *gin.Engine {
 		// Add /signup POST route to router and define route handler function
 		api.POST("/signup", signUp)
 		api.POST("/signin", signIn)
+		api.POST("/calendar/add-event", addEvent)
 	}
 
   	router.NoRoute(func(ctx *gin.Context) { ctx.JSON(http.StatusNotFound, gin.H{}) })
