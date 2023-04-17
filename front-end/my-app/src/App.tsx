@@ -32,6 +32,7 @@ function App() {
         <Route path="/signin" element={ <SignIn/> }></Route>
         <Route path="/signup" element={ <SignUp/> }></Route>
         <Route path="/user/:userid" element={ <Profile/>}></Route>
+        <Route path="/calendar/add-event" element={ <AddEvent/>}></Route>
       </Routes>
       <Footer />
     </Router>
