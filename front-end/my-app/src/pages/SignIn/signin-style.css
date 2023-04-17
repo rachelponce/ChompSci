@@ -16,6 +16,10 @@
     font-size: calc(4px + 2vmin);
     font-family: 'Work Sans', sans-serif;
     color: #282c34;
+    border-radius: 19px;
+    background: #cacacc;
+    box-shadow:  10px 10px 37px #000000,
+                 -10px -10px 37px #212121;
 }
 .header{
     display: flex;
@@ -34,3 +38,4 @@
     justify-content: center;
     font-size: 13px;
 }
+
