@@ -15,6 +15,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
   const [lastName, setLastName] = React.useState('');
   const [isDisabled, setIsDisabled] = React.useState(true);
   const [userType, setUserType] = React.useState('');
+  const [error, setError] = React.useState('');
 
 
   async function handleSubmit(event: { preventDefault: () => void; }) {
@@ -50,6 +51,13 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
     const content = await response.json();
 
     console.log(content);
+
+    if (!response.ok) {
+      setError("Registration Unsuccessful. Please enter valid user information" )
+    }
+    else {
+      setError('')
+    }
   }
 
   function handleChangeFirstName(event: { target: { value: string};}) {
@@ -144,6 +152,8 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
         </Box>
         <p></p>
       </div>
+      {error?<label>{error}</label>:null}
+      {error?<p></p>:null}
       <header className="button">
       <button id="login-button" type="submit" disabled={isDisabled}>
         Submit

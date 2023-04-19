@@ -7,6 +7,14 @@ import (
   	"github.com/gin-gonic/gin"
 )
 
+var currentUser string = " "
+
+func draft(ctx *gin.Context) {
+	ctx.JSON(http.StatusOK, gin.H{
+		"First Name": "Rachel",
+		"Last Name":  "Ponce",
+	})
+}
 
 func signUp(ctx *gin.Context) {
 	user := new(store.User) // store user data in user variable
@@ -39,6 +47,8 @@ func signIn(ctx *gin.Context) {
 		return
 	}
 
+	store.Users = append(store.Users, user)
+
 	/*
 		    // Old way of verifying users
 			for _, u := range store.Users {
@@ -60,9 +70,45 @@ func signIn(ctx *gin.Context) {
 		return
 	}
 
+	store.PrintSignIn(user.Email, user.Password)
+
+	currentUser = user.Email
+
 	ctx.JSON(http.StatusOK, gin.H{
 		"msg": "Signed in successfully.",
 		"jwt": "123456789",
 	})
+}
 
+func profile(ctx *gin.Context) {
+	var first string
+	var last string
+	var email string
+	var userType string
+
+	first = store.First(currentUser)
+	last = store.Last(currentUser)
+	email = store.Email(currentUser)
+	userType = store.UserType(currentUser)
+
+	fmt.Println("Name: " + first + " " + last)
+	fmt.Println("Email: " + email)
+	if userType == "1" {
+		fmt.Println("User Type: Student")
+		userType = "Student"
+	}
+	if userType == "2" {
+		fmt.Println("User Type: Faculty")
+		userType = "Faculty"
+	}
+	if userType == "3" {
+		fmt.Println("User Type: Faculty")
+		userType = "UF Club Board Member"
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"name":     first + " " + last,
+		"email":    email,
+		"userType": userType,
+	})
 }

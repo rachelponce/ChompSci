@@ -56,14 +56,6 @@ export const AddEventForm = ({ onSubmit }: {onSubmit:any}) => {
         setIsDisabled(true);
         console.log(Title, date, location, url, description, club)
     
-      // Useful for catching errors in console
-      //  console.log({
-      //   username,
-      //   password
-      // }) 
-    
-      // Passing username and password to backend
-      // Will initially print failing message for Sprint 2 since there are no stored users to sign in 
        const response = await fetch('http://localhost:3000/api/calendar/add-event', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
