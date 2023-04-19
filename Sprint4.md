@@ -64,6 +64,13 @@ type User struct {
 5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
 
 
+### Profile
+```
+api.GET("/user/:userid", profile)
+```
+Profile Description
+
+
 ### Functions to Interact with Database
 1.	**func PrintUserInfo()**
 This function verifies whether the user information being submitted through the sign-up page of the application is properly being passed to the backend to ensure it is correctly moving forward toward the database as well. The input is the user’s first name, last name, UF email address, password, and user type, and the output is the printing of these pieces of data in the server terminal. 
