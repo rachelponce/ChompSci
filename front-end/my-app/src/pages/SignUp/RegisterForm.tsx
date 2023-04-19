@@ -154,7 +154,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
       </div>
       {error?<label>{error}</label>:null}
       {error?<p></p>:null}
-      <header className="button">
+      <header className="button3">
       <button id="login-button" type="submit" disabled={isDisabled}>
         Submit
       </button>

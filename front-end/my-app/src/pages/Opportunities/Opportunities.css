@@ -15,6 +15,7 @@
     background: #fcfcfc;
     box-shadow:  10px 10px 20px #151515,
              -10px -10px 20px #242424;
+             
 }
 .gap{
     height: 30px;
@@ -58,8 +59,9 @@
     border-color: rgb(175, 175, 175);
     border-width: 2px;
     border-style: solid;
+    
 }
-/* button {
+.button1 {
     font-size: 16px;
     position: relative;
     margin: auto;
@@ -70,15 +72,15 @@
     box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
    }
    
-   button:active {
+   .button1:active {
     transform: scale(0.95);
    }
    
-   button span {
+   .button1 span {
     color: #464646;
    }
    
-   button .border {
+   .button1 .border {
     position: absolute;
     border: 0.15em solid #fff;
     transition: all 0.3s 0.08s linear;
@@ -89,7 +91,7 @@
     transform: translate(-50%, -50%);
    }
    
-   button:hover .border {
+   .button1:hover .border {
     display: block;
     width: 9.9em;
     height: 3.7em;
@@ -97,4 +99,4 @@
    
    .full-rounded {
     border-radius: 2em;
-   } */
+   } 

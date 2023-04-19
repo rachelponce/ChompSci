@@ -43,12 +43,12 @@ const MessageForm = ({ onSubmit }: {onSubmit:any}) => {
                         onChange={handleChangeMessage}
                         value={message}  
                     />
-                    <header className="button">
-                        <button className="full-rounded" id="login-button" type="submit" disabled={isDisabled}>
-                        Send
-                        <div className="border full-rounded"></div>
+                    <center>
+                        <button className="button1 full-rounded" id="login-button" type="submit" disabled={isDisabled}>
+                            Send
+                            <div className="border full-rounded"></div>
                         </button>
-                    </header>
+                    </center>
         </form>
     )
 }
