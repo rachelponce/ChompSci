@@ -1,9 +1,32 @@
 .heading{
-    color: black;
+    color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 35px;
+}
+.gap{
+    height: 80px;
+}
+.box {
+    display: flex;
+    justify-content: center;
+}
+.profileData{  
+    width: 70vw;
+    height: 50vh;
+    border-radius: 30px;
+    background: #fcfcfc;
+    box-shadow:  10px 10px 37px #000000,
+    -10px -10px 37px #212121;
 }
 .profile{
     color: black;
+    padding: 50px 15px;
+
+}
+.profileSpacing{
+    width: 70vw;
+    display: block;
+    text-align: center;
+    padding: 35px 15px;
 }
