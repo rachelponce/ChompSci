@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from './Navbar'
+import ImageSlider from './Slider'
 
-describe('<Navbar />', () => {
+describe('<ImageSlider />', () => {
   Cypress.on('uncaught:exception', () => false)
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<Navbar />)
+    cy.mount(<ImageSlider />)
   })
 })

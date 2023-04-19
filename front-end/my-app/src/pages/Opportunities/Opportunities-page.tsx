@@ -18,7 +18,7 @@ const Opportunities = () => {
                 <div className='blogBox'>
                     
                     <div className='bubbleSpacing'>
-                        <div className="bubble left">New research opportunity: seeking sophomore Computer Science students for a research assistant position for Fall 2023. </div>
+                        <div className="bubble left" data-test='message-bubble'>New research opportunity: seeking sophomore Computer Science students for a research assistant position for Fall 2023. </div>
                     </div>
 
                     <div className='bubbleSpacing'>

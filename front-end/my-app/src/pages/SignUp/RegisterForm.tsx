@@ -96,6 +96,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
         <div>
           <label htmlFor="first-name">First Name: </label>
           <input
+            data-test='first-name-input'
             id="first-name"
             type="text"
             onChange={handleChangeFirstName}
@@ -105,6 +106,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
         <div>
           <label htmlFor="last-name">Last Name: </label>
           <input
+            data-test='last-name-input'
             id="last-name"
             type="text"
             onChange={handleChangeLastName}
@@ -113,6 +115,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
         </div>
         <label htmlFor="username-input">UF Email: </label>
         <input
+          data-test='email-input'
           id="username-input"
           type="text"
           onChange={handleChangeUsername}
@@ -122,6 +125,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
       <div>
         <label htmlFor="password-input">Password: </label>
         <input
+          data-test='password-input'
           id="password-input"
           type="password"
           onChange={handleChangePassword}
@@ -155,7 +159,7 @@ export const RegisterForm = ({ onSubmit }: {onSubmit:any}) => {
       {error?<label>{error}</label>:null}
       {error?<p></p>:null}
       <header className="button3">
-      <button id="login-button" type="submit" disabled={isDisabled}>
+      <button id="login-button" type="submit" disabled={isDisabled} data-test='submit-button'>
         Submit
       </button>
       </header>
