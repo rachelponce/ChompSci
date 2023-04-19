@@ -13,7 +13,6 @@ const Opportunities = () => {
             <div className='opportunitiesStyle'>
                 Opportunities
             </div>
-            <div className='gap'></div>
 
             <div className='blog'>
                 <div className='blogBox'>
