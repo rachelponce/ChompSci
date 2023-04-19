@@ -49,13 +49,12 @@ return (
             <div className='profileSpacing'>
             <strong>User Type:</strong>{userType ? ' ' + userType : ' '}
             </div> 
-
-            <header className='button'>
+            
+            <center>
               <button className="full-rounded" id="login-button">
               Update Profile
-              <div className="border full-rounded"></div>
               </button>
-            </header>
+            </center>
           </div>
       </div>
     </div>
