@@ -15,6 +15,7 @@
     background: #fcfcfc;
     box-shadow:  10px 10px 20px #151515,
              -10px -10px 20px #242424;
+             
 }
 .gap{
     height: 30px;
@@ -58,6 +59,7 @@
     border-color: rgb(175, 175, 175);
     border-width: 2px;
     border-style: solid;
+    
 }
 .button1 {
     font-size: 16px;
