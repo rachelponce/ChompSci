@@ -41,10 +41,11 @@ const MessageForm = ({ onSubmit }: {onSubmit:any}) => {
                         id="messageInput"
                         type="text"
                         onChange={handleChangeMessage}
-                        value={message}  
+                        value={message}
+                        data-test='message-input'  
                     />
                     <center>
-                        <button className="button1 full-rounded" id="login-button" type="submit" disabled={isDisabled}>
+                        <button className="button1 full-rounded" id="login-button" type="submit" disabled={isDisabled} data-test='button-test'>
                             Send
                             <div className="border full-rounded"></div>
                         </button>
