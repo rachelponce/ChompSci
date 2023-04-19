@@ -48,6 +48,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
       setIsSignedIn(true);  
       var str = username.replace("@ufl.edu", "")
       window.location.replace('/user/' + str);
+      window.localStorage.setItem("isLoggedIn", 'true');
     }
     else {
       setError("Invalid Username or Password" )
@@ -98,7 +99,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
           />
           <p></p>
         </div>
-        <header className="button">
+        <header className="button2">
           <button id="login-button" type="submit" disabled={isDisabled}>
             Submit
           </button>

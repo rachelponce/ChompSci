@@ -13,17 +13,22 @@ import NavbarNSI from './components/Navbar/Navbar-NotSignedIn';
 import NavbarSI from './components/Navbar/Navbar-SignedIn';
 import Footer from './components/Footer/Footer'
 import Profile from './pages/Profile/Profile';
+import Logout from './pages/Logout/Logout';
 // import AddEvent from './pages/Calendar/Add-Event';
 // import Navbar from './components/Navbar/Navbar'
 
 function App() {
-  var loginFormVar = require("./pages/SignIn/LoginForm")
-  var signedIn1 = loginFormVar.signedIn; 
-  console.log("signed in status: " + signedIn1)
+  //var loginFormVar = require("./pages/SignIn/LoginForm")
+  //var signedIn1 = loginFormVar.signedIn; 
+
+  // This will detect if user is signed in to determine what navigation bar to display
+  var signedIn = window.localStorage.getItem("isLoggedIn");
+
+  console.log("signed in status: " + signedIn)
   return (
     <div className="generalText">
     <Router>
-      {signedIn1?<NavbarSI/>:<NavbarNSI />} 
+      {signedIn?<NavbarSI/>:<NavbarNSI />} 
       <Routes>
         <Route path="/" element={ <Landing/> }></Route>
         <Route path="/home" element={ <Home/> }></Route>
@@ -33,6 +38,7 @@ function App() {
         <Route path="/signin" element={ <SignIn/> }></Route>
         <Route path="/signup" element={ <SignUp/> }></Route>
         <Route path="/user/:userid" element={ <Profile/>}></Route>
+        <Route path="/logout" element={<Logout/>}></Route>
       </Routes>
       <Footer />
     </Router>
