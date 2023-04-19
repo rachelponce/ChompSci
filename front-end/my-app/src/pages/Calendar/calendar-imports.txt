@@ -2,3 +2,4 @@ In ChompSci directory,
 cd front-end/my-app
 npm install @fullcalendar/react @fullcalendar/core @fullcalendar/daygrid @fullcalendar/interaction @fullcalendar/timegrid 
 npm install bootstrap 
+npm install react-bootstrap
