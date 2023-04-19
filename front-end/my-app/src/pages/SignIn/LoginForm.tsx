@@ -48,6 +48,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
       setIsSignedIn(true);  
       var str = username.replace("@ufl.edu", "")
       window.location.replace('/user/' + str);
+      window.localStorage.setItem("isLoggedIn", 'true');
     }
     else {
       setError("Invalid Username or Password" )
