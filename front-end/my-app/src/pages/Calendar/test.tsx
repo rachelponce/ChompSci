@@ -1,42 +1,35 @@
-import {
-    EventApi,
-    DateSelectArg,
-    EventClickArg,
-    EventContentArg,
-    formatDate,
-  } from '@fullcalendar/core'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import "../Calendar/Calendar-page.css"
-import { INITIAL_EVENTS, createEventId } from '../Calendar/event-utils'
 import * as bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from 'react' 
-import {Link} from "react-router-dom"
 import { EditEvent } from './AddEvent' 
 
 function Events() {
 
   const [events, setEvents] = useState([
     {
-      title: "Cool event", 
-      date: "2023-04-22T18:30:00", 
-      location: "CAR100", 
-      url: "www.webkinz.com", 
-      club: "Maddie Club"
+      title: "Sprint 4", 
+      date: "2023-04-19T23:00:00", 
+      location: "Online", 
+      url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
+      club: "CEN3031",
+      description: "The final stretch lets goooo"
     }
   ])
 
-function newEvent(t: string, d:string, l:string, u:string, c:string) {// current problem: this isnt getting called 
+function newEvent(t: string, d:string, l:string, u:string, c:string, de:string) {// current problem: this isnt getting called 
   console.log("hello from NewEvent")
   let newEvent = {
       title: t, 
       date: d, 
       location: l, 
       url: u, 
-      club: c
+      club: c,
+      description: de
   }
   setEvents([...events, newEvent])
   console.log("hello from NewEvent")
@@ -47,7 +40,8 @@ function Calendar() {
 
     let calendarRef: any = React.createRef(); 
   return (
-    <div>
+    <div className='calendar'>
+      <div className='calendar-main' role='calendar'>
         <EditEvent newEvent={newEvent}/> 
         <FullCalendar
             plugins={[
@@ -57,21 +51,42 @@ function Calendar() {
             ]}
             ref={calendarRef}
             headerToolbar={{
-              left: "prev,next today customAddEventBtn",
+              left: "prev,next today",
               center: "title",
               right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
             }}
             initialView="dayGridMonth"
             events={{events}}
-            // customButtons={{
-            //   customAddEventBtn: {
-            //     text: "Add an event",
-            //     click: 
-            //     // click: handleCustomAddEventBtn(),
-            //   },
-            // }}
-            
+            eventDidMount={(info) => {
+              return new bootstrap.Popover(info.el, {
+                title: info.event.title,
+                placement: "auto",
+                container: "body", 
+                trigger: "hover",
+                customClass: "popoverStyle",
+                content: 
+                  "Event by " + info.event.extendedProps.club + 
+                  "<p></p>" + 
+                  "Date: " + info.event.start + 
+                  "<p></p>" + 
+                  "Location: " + info.event.extendedProps.location + 
+                  "<p></p>" + 
+                  info.event.extendedProps.description + 
+                  "<p></p>" + 
+                  "Click on the event for more information!",    
+                html: true,
+              }) 
+            }
+          }
+            eventClick={function(info) {
+              info.jsEvent.preventDefault(); 
+
+              if (info.event.url) {
+                window.open(info.event.url); 
+              }
+            }}
     />
+    </div>
     </div>
   )
 }
