@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 export function EditEvent(props: any ) {
-    const [title, setTitle] = useState(props.title);
-    const [date, setDate] = useState(props.date);
+    const [title, setTitle] = useState("");
+    const [date, setDate] = useState("");
 
     const [show, setShow] = useState(false);
 
@@ -14,7 +14,7 @@ export function EditEvent(props: any ) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add an Event
+        + Add an Event
       </Button>
 
       <Modal
@@ -24,16 +24,20 @@ export function EditEvent(props: any ) {
         keyboard={false}
       >
          <Modal.Header closeButton>
-                    <Modal.Title>Add an Event</Modal.Title>
+                    <Modal.Title>New Event</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form
                         onSubmit={(e) => {
                             handleClose();
                             e.preventDefault();
-                            console.log("hello from editevent!");  // how to send this data to calendar on submit?
-                            // createEvent on text.tsx, and u set like event title: title from here
-                            // props.updateEmployee(props.id, title, date);
+                            setTitle("");
+                            setDate(""); 
+                            props.newEvent(title, date); 
+                            console.log("hello from editevent!"); 
+
+                            // Other thing isnt getting called cuz i never called it in here tbh 
+                            // how to send this data to calendar on submit?
                         }}
                         id="editmodal"
                         className="w-full max-w-sm"
