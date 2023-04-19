@@ -35,12 +35,8 @@ const Opportunities = () => {
                         <div className="bubble left">Tutoring opportunity for students who have taken MAC2313. If interested, reach out to me at tutoring@ufl.edu. </div>
                     </div>
                     <div className='bubbleSpacing'>
-                        <div className="bubble left">New research opportunity: seeking sophomore Computer Science students for a research assistant position this summer, 2023. </div>
+                        <div className="bubble left">Interested in being on the WiCSE executive board for the 2023-2024 year? Applications are due April 15th by 11:59PM! You will be notified by April 16th if you were selected for an interview and can schedule that for the following week! </div>
                     </div>
-                    <div className='bubbleSpacing'>
-                        <div className="bubble left">New research opportunity: seeking sophomore Computer Science students for a research assistant position this summer, 2023. </div>
-                    </div>
-
                     <div className='gap'></div>
 
                     <MessageForm onSubmit ={onSubmitMessage} />

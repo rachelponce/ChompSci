@@ -99,7 +99,7 @@ export const LoginForm = ({ onSubmit }: {onSubmit:any}) => {
           />
           <p></p>
         </div>
-        <header className="button">
+        <header className="button2">
           <button id="login-button" type="submit" disabled={isDisabled}>
             Submit
           </button>
