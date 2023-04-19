@@ -5,6 +5,10 @@ import Modal from 'react-bootstrap/Modal';
 export function EditEvent(props: any ) {
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
+    const [club, setClub] = useState("");
+    const [location, setLocation] = useState("");
+    const [description, setDescription] = useState("");
+    const [url, setUrl] = useState("");
 
     const [show, setShow] = useState(false);
 
@@ -33,7 +37,7 @@ export function EditEvent(props: any ) {
                             e.preventDefault();
                             setTitle("");
                             setDate(""); 
-                            props.newEvent(title, date); 
+                            props.newEvent(title, date, location, url, club, description); 
                             console.log("hello from editevent!"); 
 
                             // Other thing isnt getting called cuz i never called it in here tbh 
@@ -69,7 +73,7 @@ export function EditEvent(props: any ) {
                                     className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                                     htmlFor="role"
                                 >
-                                    Role
+                                    Date (Format: 2023-04-23T18:30:00)
                                 </label>
                             </div>
                             <div className="md:w-2/3">
@@ -80,6 +84,90 @@ export function EditEvent(props: any ) {
                                     value={date}
                                     onChange={(e) => {
                                         setDate(e.target.value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div className="md:flex md:items-center mb-6">
+                            <div className="md:w-1/3">
+                                <label
+                                    className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                    htmlFor="event-title"
+                                >
+                                    Location
+                                </label>
+                            </div>
+                            <div className="md:w-2/3">
+                                <input
+                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                                    id="location"
+                                    type="text"
+                                    value={location}
+                                    onChange={(e) => {
+                                        setLocation(e.target.value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div className="md:flex md:items-center mb-6">
+                            <div className="md:w-1/3">
+                                <label
+                                    className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                    htmlFor="event-title"
+                                >
+                                    Who is hosting this event? 
+                                </label>
+                            </div>
+                            <div className="md:w-2/3">
+                                <input
+                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                                    id="club"
+                                    type="text"
+                                    value={club}
+                                    onChange={(e) => {
+                                        setClub(e.target.value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div className="md:flex md:items-center mb-6">
+                            <div className="md:w-1/3">
+                                <label
+                                    className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                    htmlFor="event-title"
+                                >
+                                    Url (Optional)
+                                </label>
+                            </div>
+                            <div className="md:w-2/3">
+                                <input
+                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                                    id="url"
+                                    type="text"
+                                    value={url}
+                                    onChange={(e) => {
+                                        setUrl(e.target.value);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        <div className="md:flex md:items-center mb-6">
+                            <div className="md:w-1/3">
+                                <label
+                                    className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                    htmlFor="event-title"
+                                >
+                                    Event Description
+                                </label>
+                            </div>
+                            <div className="md:w-2/3">
+                                <input
+                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                                    id="description"
+                                    type="text"
+                                    value={description}
+                                    onChange={(e) => {
+                                        setDescription(e.target.value);
                                     }}
                                 />
                             </div>
