@@ -21,6 +21,12 @@ const NavbarSI = () => {
                 <NavLink to="/opportunities">
                      opportunities
                 </NavLink>
+                <NavLink to="/user/:userid">
+                     profile
+                </NavLink>
+                <NavBtnLink to="/logout">
+                     logout 
+                </NavBtnLink>
             </NavMenu>
             {/* <NavBtn> */}
                 {/* <NavBtnLink to="/signin">
