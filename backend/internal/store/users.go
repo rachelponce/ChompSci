@@ -11,8 +11,10 @@ import (
 
 type User struct {
 	gorm.Model
-	FirstName string `binding:"required,min=2,alpha"`
-	LastName  string `binding:"required,min=2,alpha"`
+	//FirstName string `binding:"required,min=2,alpha"`
+	//LastName  string `binding:"required,min=2,alpha"`
+	FirstName string
+	LastName  string
 	Email     string `gorm:"uniqueIndex" binding:"required,excludesall=!#?$%^&*()+-~,email"`
 	Password  string `gorm:"uniqueIndex" binding:"required,min=8,max=25"`
 	UserType  int
