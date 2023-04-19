@@ -18,7 +18,7 @@
 The Chomp Sci API is organized around REST. Our API accepts form-encoded requests, returns JSON-encoded responses, and uses standard HTTP response codes and authentication.
 
 ### Errors
-Chomp Sci uses conventional HTTP response codes to indicate the success or failure of an API request. The two main codes used for this application are 201 and 401. The 201 HTTP status code indicates that a new resource was successfully created as a result of a valid request. The 401 HTTP status code is returned when the user provides invalid or no credentials in a request. 
+Chomp Sci uses conventional HTTP response codes to indicate the success or failure of an API request. The three main codes used for this application are 200, 400, and 401. The 201 HTTP status code indicates that a new resource was successfully created as a result of a valid request. The 400 HTTP status code means that the server will not process the client's request becauses its form is not how the API expects it to be. The 401 HTTP status code is returned when the user provides invalid or no credentials in a request. 
 
 ### Sign Up
 ```
