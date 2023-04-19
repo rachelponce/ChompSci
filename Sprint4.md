@@ -5,9 +5,20 @@
 2) Implementation of a calendar for displaying club events
 3) Created home page that includes slide deck of UF event flyers 
 4) Additional Sign-Up Page functionality: takes more input fields including the user's first name, last name, UF email, password, and user type which is selected in a drop-down menu ("Student", "Faculty", or "UF Club Board Member")
-5) Established sign-in verification using database based on user info inputted during sign-up
+5) User profiles: Established sign-in verification using database based on user info inputted during sign-up
+6) Created an about page which not only displays information about the team and our project, but also each team member's personally created avatar.
+7) Created a new opportunities page with displays opportunities for research, internships, tutoring, clubs, and more in a messaging/blog-posting format. 
 
 ## Front-end Unit Testing
+
+
+## Cypress Testing
+For the last sprint, Cypress testing files were created for the remaining components. 
+1) Register Form: multiple tests creating to check whether each input field takes input (first name, last name, email, password) and whether text and buttons render.
+2) Opportunities page: testing for the rendering of message bubbles on the page.
+3) Opportunities Message Form: tests for the input of a message and the click of the submit button.
+4) About page: testing for the rendering of text and the visibility of all character logos.
+5) Miscellaneous: testing for the rendering of the landing page, home page slider, and App.tsx.
 
 
 ## Back-end Unit Testing
