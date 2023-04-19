@@ -3,24 +3,19 @@ package store
 import (
 	"fmt"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"github.com/gin-gonic/gin"
 )
 
 type User struct {
 	gorm.Model
-	//Username string
-	FirstName string `validate:"required,min=2"`
-	LastName string `validate:"required,min=2"`
-	// Email 		string 		`validate:"required,excludesall=!#?$%^&*()+-~,email"`
-	// Password 	string 		`validate:"required,min=8,max=25"`
-	Email     string `gorm:"uniqueIndex"`
-	Password  string `gorm:"uniqueIndex"`
-	UserType int
-	// CreatedAt
-	// UpdatedAt
-	// DeletedAt
+	FirstName string `binding:"required,min=2,alpha"`
+	LastName  string `binding:"required,min=2,alpha"`
+	Email     string `gorm:"uniqueIndex" binding:"required,excludesall=!#?$%^&*()+-~,email"`
+	Password  string `gorm:"uniqueIndex" binding:"required,min=8,max=25"`
+	UserType  int
 }
 
 var Users []*User
@@ -147,13 +142,13 @@ func testSetup() {
 }
 
 // can be used in Tests when valid user needs to be created
-func addTestUser() (*User) {
+func addTestUser() *User {
 	user := &User{
-		FirstName:          "Jane",
-		LastName: 			"Doe",
-		Email:              "email@address.com",
-		Password: 			"password123",
-		UserType: 			1,
+		FirstName: "Jane",
+		LastName:  "Doe",
+		Email:     "email@address.com",
+		Password:  "password123",
+		UserType:  1,
 	}
 
 	return user
