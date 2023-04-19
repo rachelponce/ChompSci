@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home-page'
 import About from './pages/About/About-page'
-import Calendar from './pages/Calendar/Calendar-page';
+// import Calendar from './pages/Calendar/Calendar-page';
+import Events from './pages/Calendar/test';
 import Opportunities from './pages/Opportunities/Opportunities-page';
 import SignIn from './pages/SignIn/Signin-page';
 import SignUp from './pages/SignUp/Signup-page';
@@ -12,7 +13,7 @@ import NavbarNSI from './components/Navbar/Navbar-NotSignedIn';
 import NavbarSI from './components/Navbar/Navbar-SignedIn';
 import Footer from './components/Footer/Footer'
 import Profile from './pages/Profile/Profile';
-import AddEvent from './pages/Calendar/Add-Event';
+// import AddEvent from './pages/Calendar/Add-Event';
 // import Navbar from './components/Navbar/Navbar'
 
 function App() {
@@ -28,11 +29,10 @@ function App() {
         <Route path="/home" element={ <Home/> }></Route>
         <Route path="/about" element={ <About/> }></Route>
         <Route path="/opportunities" element={ <Opportunities/> }></Route>
-        <Route path="/calendar" element={ <Calendar/> }></Route>
+        <Route path="/calendar" element={ <Events/> }></Route>
         <Route path="/signin" element={ <SignIn/> }></Route>
         <Route path="/signup" element={ <SignUp/> }></Route>
         <Route path="/user/:userid" element={ <Profile/>}></Route>
-        <Route path="/calendar/add-event" element={ <AddEvent/>}></Route>
       </Routes>
       <Footer />
     </Router>
