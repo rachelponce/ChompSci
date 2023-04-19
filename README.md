@@ -1,21 +1,98 @@
+
 # ChompSci
-**Project Name**: ChompSci
 
-**Project Description**:
-A web-based application designed to bring the UF Computer Science community together by promoting and organizing events and opportunities, as well as encouraging CS students to connect more with one another. 
+A web-based application designed to bring the UF Computer Science community together by promoting and organizing events and opportunities, as well as encouraging CS students to connect more with one another. By making the CS opportunities and resources more accessible, we can help UF computer science students to break into the world of tech and prepare for their future career.
 
-This application would have different features as listed below:
+This application has a variety of features as listed below:
 
-1. A homepage with weekly events and opportunities from different computer-science based organizations
-2. A calendar with all CS events listed in one place and the potential to link it to the user's own Google calendar
-3. Individual profiles for CS students and professors
-4. Badges to incentivize students to take part in events and opportunities promoted through the website
-5. A help/tutoring tab to assist students in finding resources to succeed in their CS courses but to also help students network with each other to share career experiences and provide mentorship.
+1. A homepage with weekly events from different computer science-based organizations and sponsors at UF
+2. A calendar with all CS events listed in one place
+3. Sign-up and sign-in pages for users
+4. Individual profiles for CS students, professors, and faculty
+5. An opportunities tab in a message-posting format to notify students of potential research, internship, tutoring, and club opportunities at UF.
+## Authors
 
-The primary objective will be for students to share opportunities and network to ultimately help each other succeed in the world of computer science. Having as many opportunities listed all together in one website will allow UF computer science students to not only learn about but take advantage of as many resources as possible from the rest of the UF computer science community.
+- [Lily Cabrera ~ Back-end Engingeer](https://github.com/lilyc1)
+- [Savannah Fletcher ~ Front-end Engineer](https://github.com/savannahfletcher)
+- [Madeleine Glaum ~ Front-end Engineer](https://github.com/mglaum)
+- [Rachel Ponce ~ Back-end Engineer](https://github.com/rachelponce)
 
-**Members**:
-* Lily Cabrera - Back-End Engineer
-* Savannah Fletcher - Front-End Engineer
-* Madeleine Glaum - Front-End Engineer
-* Rachel Ponce - Back-End Engineer
+
+## Tech
+
+**Client:** React, TypeScript, CSS
+
+**Server:** Node, Go, SQLite
+
+
+## Installation
+
+**Front-end Installations:**
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Create a local clone of the repository on Github with your preferable local path for the project.
+
+Install these locally in your project:
+```bash
+npm install -D npm
+```
+```bash
+npm install -D typescript
+```
+```bash
+npm install -D ts-node
+```
+
+Navigate to the front-end/my-app directory:
+```bash
+  cd front-end/my-app
+```
+
+Additionally, you must run a variety of installation commands for this project:
+  
+```bash
+  npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+```
+```bash
+  npm install bootstrap 
+```
+```bash
+  npm install react-bootstrap
+```
+```bash
+  npm install @fullcalendar/react @fullcalendar/core @fullcalendar/daygrid @fullcalendar/interaction @fullcalendar/timegrid
+```
+```bash
+  npm install typewriter-effect
+```
+```bash
+  npm i react-auth-kit
+```
+
+Testing Installations: 
+```bash
+  npm i jest @types/jest ts-jest typescript -D
+```
+```bash
+  npm install --save-dev jest  
+```
+```bash
+  npm install --save-dev @babel/preset-typescript
+```
+
+Still in the front-end/my-app directoy, you can now run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.
+
+**Back-end Installations:**
+
+
+    
