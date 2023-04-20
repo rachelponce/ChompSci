@@ -38,3 +38,19 @@ func UpdateCalendarTable(EventTitle string, EventDate string, EventURL string, E
 	db.First(&myEvent, 1) // first row in table ordered by ID
 	fmt.Println("Event ID:", myEvent.ID)
 }
+
+func VerifyEvent(EventTitle string) bool {
+	db, err := gorm.Open(sqlite.Open("calendarEvents.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	var myEvent Event
+
+	if err := db.Where("event_title = ?", EventTitle).First(&myEvent).Error; err != nil {
+		return false
+	}
+
+	println("Event found")
+	return true
+}
