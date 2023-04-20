@@ -53,14 +53,11 @@ This function establishes the connection between the front end and the back end 
 ```
 type User struct {
 	gorm.Model
-	FirstName string `validate:"required,min=2"`
-	LastName  string `validate:"required,min=2"`
-	Email     string `gorm:"uniqueIndex"`
-	Password  string `gorm:"uniqueIndex"`
+	FirstName string `binding:"required,min=2,alpha"`
+	LastName  string `binding:"required,min=2,alpha"`
+	Email     string `gorm:"uniqueIndex" binding:"required,excludesall=!#?$%^&*()+-~,email"`
+	Password  string `gorm:"uniqueIndex" binding:"required,min=8,max=25"`
 	UserType  int
-	// CreatedAt
-	// UpdatedAt
-	// DeletedAt
 }
 ```
 #### Attributes
