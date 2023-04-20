@@ -126,6 +126,6 @@ Still in the backend/chompSite directory, you can now run:
 
 Runs the backend server as it listens and serves HTTP requests on http://localhost:8080 \ 
 
-### `go test` or ### `go test -v`
+### `go test` or `go test -v`
 
 Launches the testing in Go.
