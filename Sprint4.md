@@ -10,7 +10,35 @@
 7) Created a new opportunities page with displays opportunities for research, internships, tutoring, clubs, and more in a messaging/blog-posting format. 
 
 ## Front-end Unit Testing
-
+Home page:
+- Tests header image's visibility
+- Tests that header image is defined
+- Tests for the correct class of header image
+- Tests that the slide deck is visible
+- Tests that the slide deck is defined and renders
+- Tests for the correct class of the slide deck
+Landing page:
+- Tests visibility for text on landing page
+- Tests that headers on page are defined
+- Tests for correct image being rendered
+- Tests that image is defined
+- Tests for image's visibility
+- Tests for typewriter package's visibility
+- Tests that typewriter package is defined and renders
+Calendar Page:
+- Tests that calendar component is defined
+- Tests that body of calendar is able to be rendered
+- Tests for the correct class of calendar body
+- Tests that correct month and date are visible, defined, and rendered
+About Page: 
+- Tests that avatars for each member are defined
+- Tests for visibility of images
+- Tests that images render properly 
+- Tests that the body paragraphs use the correct classes and are rendered, defined 
+Opportunities Page:
+- Tests that the "blog" is defined
+- Tests that the blog renders and is visible 
+- Tests that each speech bubble is defined, rendered, and visible 
 
 ## Cypress Testing
 For the last sprint, Cypress testing files were created for the remaining components. 
