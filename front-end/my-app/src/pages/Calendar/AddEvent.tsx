@@ -30,7 +30,7 @@ export function EditEvent(props: any ) {
         setTitle('');
         setDate(''); 
         props.newEvent(title, date, location, url, club, description); 
-        console.log("hello from editevent!"); 
+        //console.log("hello from editevent!"); 
         // Other thing isnt getting called cuz i never called it in here tbh 
         // how to send this data to calendar on submit?
 
