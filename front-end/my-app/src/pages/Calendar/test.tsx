@@ -73,11 +73,14 @@ useEffect(() => {
 
 function Calendar() { 
 
+  var signedIn = window.localStorage.getItem("isLoggedIn");
+
     let calendarRef: any = React.createRef(); 
   return (
     <div className='calendar'>
       <div className='calendar-main' role='calendar'>
-        <EditEvent newEvent={newEvent}/> 
+      {signedIn?<EditEvent newEvent={newEvent}/>:null}
+         
         <FullCalendar
             plugins={[
               dayGridPlugin,

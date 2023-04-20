@@ -10,11 +10,11 @@ const About = () => {
         
         <div className='background'>
             <div className='aboutStyle'>
-                <h1>About Us</h1>
+                <h1 data-testid="about-us">About Us</h1>
                 <div className='gap'></div>
             </div>
             <div className='paragraphDiv'>
-            <div className='aboutParagraph'>Our team of software engineers has worked 
+            <div className='aboutParagraph' data-test='about-paragraph'>Our team of software engineers has worked 
             diligently to develop a platform that contains the most relevant information, 
             events, and opportunities in the UF computer science community. </div>
             </div>
@@ -25,7 +25,7 @@ const About = () => {
             </div>
 
             <div className='teammates'>
-                <img src={require('../../images/savannahAvatar.png')} alt="logo" height='250' />
+                <img src={require('../../images/savannahAvatar.png')} alt="logo" height='250' data-testid="savannah"/>
                 <div>
                     <h3>Savannah Fletcher</h3>
                     <h5>Front-end Developer</h5>
@@ -33,7 +33,7 @@ const About = () => {
                     <div>Class of 2025</div>
                 </div>
                 <div className='gap2'></div>
-                <img src={require('../../images/maddieAvatar.png')} alt="logo" height='250' />
+                <img src={require('../../images/maddieAvatar.png')} alt="logo" height='250' data-testid="maddie"/>
                 <div>
                     <h3>Madeleine Glaum</h3>
                     <h5>Front-end Developer</h5>
@@ -44,7 +44,7 @@ const About = () => {
             <div className='gap'></div>
             <div className='teammates'>
                 
-                <img src={require('../../images/rachelAvatar.png')} alt="logo" height='250' />
+                <img src={require('../../images/rachelAvatar.png')} alt="logo" height='250' data-testid="rachel"/>
                 <div>
                     <h3>Rachel Ponce</h3>
                     <h5>Back-end Developer</h5>
@@ -52,7 +52,7 @@ const About = () => {
                     <div>Class of 2025</div>
                 </div>
                 <div className='gap2'></div>
-                <img src={require('../../images/lilyAvatar.png')} alt="logo" height='250' />
+                <img src={require('../../images/lilyAvatar.png')} alt="logo" height='250' data-testid="lily"/>
                 <div>
                     <h3>Lily Cabrera</h3>
                     <h5>Back-end Developer</h5>
