@@ -1,13 +1,11 @@
 # Sprint 4
 
 ## Work Completed:
-1) Created a landing page for the website that advertises the website's functionality
-2) Implementation of a calendar for displaying club events
-3) Created home page that includes slide deck of UF event flyers 
-4) Additional Sign-Up Page functionality: takes more input fields including the user's first name, last name, UF email, password, and user type which is selected in a drop-down menu ("Student", "Faculty", or "UF Club Board Member")
-5) User profiles: Established sign-in verification using database based on user info inputted during sign-up
-6) Created an about page which not only displays information about the team and our project, but also each team member's personally created avatar.
-7) Created a new opportunities page with displays opportunities for research, internships, tutoring, clubs, and more in a messaging/blog-posting format. 
+1) Created an about page which not only displays information about the team and our project, but also each team member's personally created avatar.
+2) Created a new opportunities page with displays opportunities for research, internships, tutoring, clubs, and more in a messaging/blog-posting format. 
+3) Created a profile page a user can access once properly signed in that is filled with default information from database
+4) Using JWT Authentication and Local Storage, a user can remain signed in while visiting any tab on website until logging out
+5) 
 
 ## Front-end Unit Testing
 Home page:
@@ -54,6 +52,101 @@ For the last sprint, Cypress testing files were created for the remaining compon
 
 
 ## Back-end Unit Testing
+### API Unit Tests
+1) Testing Verification function used during Sign-In
+```
+func TestVerification(t *testing.T) {
+	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	db.AutoMigrate(&User{})
+
+	// Create
+	//db.Create(&User{FirstName: "Rachel", LastName: "Ponce", Email: "rachel.ponce@ufl.edu", Password: "hello123", UserType: 1})
+	//db.Create(&User{FirstName: "Maria", LastName: "Ponce", Email: "maria.ponce@ufl.edu", Password: "apple123", UserType: 2})
+
+	got := Verification("rachel.ponce@ufl.edu", "hello123")
+	want := true
+
+	if got != want {
+		t.Errorf("Correct user info was not found in database.")
+	}
+}
+```
+2) Testing First function which will retrieve user's first name from database for Profile
+```
+func TestFirst(t *testing.T) {
+	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	db.AutoMigrate(&User{})
+
+	got := First("rachel.ponce@ufl.edu")
+	want := "Rachel"
+
+	if got != want {
+		t.Errorf("got %q, wanted %q", got, want)
+	}
+}
+```
+3) Testing Last function which will retrieve user's last name from database for Profile
+```
+func TestLast(t *testing.T) {
+	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	db.AutoMigrate(&User{})
+
+	got := Last("rachel.ponce@ufl.edu")
+	want := "Ponce"
+
+	if got != want {
+		t.Errorf("got %q, wanted %q", got, want)
+	}
+}
+```
+4) Testing Email function which will retrieve user's email from database for Profile
+```
+func TestEmail(t *testing.T) {
+	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	db.AutoMigrate(&User{})
+
+	got := Email("rachel.ponce@ufl.edu")
+	want := "rachel.ponce@ufl.edu"
+
+	if got != want {
+		t.Errorf("got %q, wanted %q", got, want)
+	}
+}
+```
+5) Testing UserType function which will retrieve user's type from database for Profile
+```
+func TestUserType(t *testing.T) {
+	db, err := gorm.Open(sqlite.Open("userInfo.db"), &gorm.Config{})
+	if err != nil {
+		panic("failed to connect database")
+	}
+
+	db.AutoMigrate(&User{})
+
+	got := UserType("rachel.ponce@ufl.edu")
+	want := "1"
+
+	if got != want {
+		t.Errorf("got %q, wanted %q", got, want)
+	}
+}
+```
 
 
 ## Updated API Documentation 
@@ -61,7 +154,7 @@ For the last sprint, Cypress testing files were created for the remaining compon
 The Chomp Sci API is organized around REST. Our API accepts form-encoded requests, returns JSON-encoded responses, and uses standard HTTP response codes and authentication.
 
 ### Errors
-Chomp Sci uses conventional HTTP response codes to indicate the success or failure of an API request. The three main codes used for this application are 200, 400, and 401. The 201 HTTP status code indicates that a new resource was successfully created as a result of a valid request. The 400 HTTP status code means that the server will not process the client's request becauses its form is not how the API expects it to be. The 401 HTTP status code is returned when the user provides invalid or no credentials in a request. 
+Chomp Sci uses conventional HTTP response codes to indicate the success or failure of an API request. The three main codes used for this application are 200, 400, and 401. The 201 HTTP status code indicates that a new resource was successfully created as a result of a valid request. The 400 HTTP status code means that the server will not process the client's request because its form is not how the API expects it to be. The 401 HTTP status code is returned when the user provides invalid or no credentials in a request. 
 
 ### Sign Up
 ```
@@ -79,7 +172,16 @@ api.POST("/signin", signIn)
 Once a user has signed up and created an account, they are able to sign in to the platform where they can access their personal dashboard with more information about them and are granted more functionality across the application. In this process, users will input two of the five parameters they input when first signing up, their UF email and their password. This information will be passed to the backend and compared with the information stored in the database. If both the email and password exist and belong to the same user, the user will be verified as a valid user logging in. Otherwise, an error will be returned for invalid credentials.
 
 **func signIn()**
-This function establishes the connection between the front end and the back end as related to the sign-in page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is either an error if binding fails and the connection between the front end and back end is not made, or a message and a JSON Web Token (JWT) for authentication. 
+This function establishes the connection between the front end and the back end as related to the sign-in page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is either an error if binding fails and the connection between the front end and back end is not made, or a message and a JSON Web Token (JWT) for authentication.
+
+### Profile
+```
+api.GET("/user/:userid", profile)
+```
+Once a user signs in to the site and their attempt is verified with information stored in the database, they can access their personal profile. This page will have information about the user including basic details from when they first signed up to more specific information such as what year they are in, what internships they’ve done, what classes they have taken/are taking, etc. This way users can share more about themselves with other computer science students at UF to both receive opportunities and provide help based on their experience. Based on which user is logged in, the frontend will automatically send a request to the backend to retrieve the rest of that user’s information from the database.  
+
+**func profile()**
+This function serves as the connection between the front end and the back end as related to the profile page. The input is the context that contains all the information about the request that the handler might need to process it, or gin.Context. The output is a JSON response to the front end including the parts of information requested about the user. The backend will use First(), Last(), Email(), and UserType(), to retrieve each individual component of information about the user stored in one row of the database.
 
 ### User Object
 ```
@@ -104,13 +206,6 @@ type User struct {
 5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
 
 
-### Profile
-```
-api.GET("/user/:userid", profile)
-```
-Profile Description
-
-
 ### Functions to Interact with Database
 1.	**func PrintUserInfo()**
 This function verifies whether the user information being submitted through the sign-up page of the application is properly being passed to the backend to ensure it is correctly moving forward toward the database as well. The input is the user’s first name, last name, UF email address, password, and user type, and the output is the printing of these pieces of data in the server terminal. 
@@ -120,4 +215,17 @@ This function establishes the backend’s connection to the SQLite database usin
 
 3.	**func Verification()** 
 This function verifies whether there is still a connection between the backend and the database using Gorm to verify whether the user logging in is a valid user. The input is the user’s UF email and password and the output is a boolean. What determines whether this boolean is true or false is if the username and the password input exist and belong to the same user. If so, then the user has been found in the database, therefore enabling them to access and use the functionality granted to valid users of the application. If not, then this indicates that the following user is not a valid user or has input the wrong login credentials. 
+
+4.	**func First()** 
+This function is used to retrieve the first name component of a registered user of ChompSci. The input is the user’s UF email, and the output is a string of the component returned from the database. Since the user has already been verified to exist within the database by signing in, this function will locate the first user in the database with the input email and get their first name. Before it retrieves the component, however, it verifies the connection between the back end and the database using Gorm. 
+
+5.	**func Last()** 
+This function is used to retrieve the last name component of a registered user of ChompSci. The input is the user’s UF email, and the output is a string of the component returned from the database. Since the user has already been verified to exist within the database by signing in, this function will locate the first user in the database with the input email and get their last name. Before it retrieves the component, however, it verifies the connection between the back end and the database using Gorm.
+
+6.	**func Email()** 
+This function is used to retrieve the email component of a registered user of ChompSci. The input is the user’s UF email, and the output is a string of the component returned from the database. Since the user has already been verified to exist within the database by signing in, this function will simply return the same email that was input but by still checking if it matches with the one found in the database. Before it retrieves the component, however, it verifies the connection between the back end and the database using Gorm.
+
+7.	**func UserType()** 
+This function is used to retrieve the user type component of a registered user of ChompSci. The input is the user’s UF email, and the output is a string of the component returned from the database. Since the user has already been verified to exist within the database by signing in, this function will locate the first user in the database with the input email and get their user type. Before it retrieves the component, however, it verifies the connection between the back end and the database using Gorm.
+
 
