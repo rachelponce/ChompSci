@@ -14,7 +14,7 @@ const About = () => {
                 <div className='gap'></div>
             </div>
             <div className='paragraphDiv'>
-            <div className='aboutParagraph'>Our team of software engineers has worked 
+            <div className='aboutParagraph' data-test='about-paragraph'>Our team of software engineers has worked 
             diligently to develop a platform that contains the most relevant information, 
             events, and opportunities in the UF computer science community. </div>
             </div>
