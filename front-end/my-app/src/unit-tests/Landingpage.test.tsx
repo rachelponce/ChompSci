@@ -21,6 +21,7 @@ test('Picture is defined and visible', async () => {
     const pic = screen.getByTestId('pic'); 
     expect(pic).toBeVisible(); 
     expect(pic).toBeDefined(); 
+    expect(pic).toBeValid(); 
   })
 
 test('Correct image is used for picture', async () => {

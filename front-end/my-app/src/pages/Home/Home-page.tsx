@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import "./Home-page.css"
-import ReactDOM from 'react-dom';
 import ImageSlider from './Slider/Slider';
 import { SliderData } from './Slider/SliderData';
   
@@ -8,12 +8,14 @@ const Home = () => {
 
     return(
         <div className='homepage'>
+            {/* <BrowserRouter> */}
             <div data-testid= "picHeader" className='happening-this-week'>
                 <img src={require('../../images/happening-this-week.png')} alt="pic"/>
             </div>
             <div data-testid="slider" className='slidey'>
                 <ImageSlider slides={SliderData} />
             </div>
+            {/* </BrowserRouter> */}
         </div>
     )
 }

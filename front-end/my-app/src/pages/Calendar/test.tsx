@@ -10,6 +10,8 @@ import { EditEvent } from './AddEvent'
 
 function Events() {
 
+
+
   const [events, setEvents] = useState([
     {
       title: "Sprint 4", 
@@ -18,6 +20,14 @@ function Events() {
       url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
       club: "CEN3031",
       description: "The final stretch lets goooo"
+    }, 
+    {
+      title: "WiCSE GBM #4", 
+      date: "2023-04-12T18:30:00", 
+      location: "TUR L007", 
+      url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
+      club: "UF Women in Computer Science and Engineering",
+      description: "Good afternoon fabulous WiCSE members!! I am excited to announce that our final GBM of the semester will be happening this Wednesday, April 12th at 6:30pm in TUR L007. This super fun GBM will be featuring A fireside chat with Sue Harnett, the Founder and President of Rewriting the Code (RTC), one of the largest and most impactful non profit organizations that empowers college, graduate, and early career women in tech. Join us in an exciting talk to learn about women in the tech industry, managing duck syndrome, and how to become part of the RTC network. Be there!"
     }
   ])
 
@@ -38,11 +48,14 @@ function newEvent(t: string, d:string, l:string, u:string, c:string, de:string) 
 
 function Calendar() { 
 
+  var signedIn = window.localStorage.getItem("isLoggedIn");
+
     let calendarRef: any = React.createRef(); 
   return (
     <div className='calendar'>
       <div className='calendar-main' role='calendar'>
-        <EditEvent newEvent={newEvent}/> 
+      {signedIn?<EditEvent newEvent={newEvent}/>:null}
+         
         <FullCalendar
             plugins={[
               dayGridPlugin,

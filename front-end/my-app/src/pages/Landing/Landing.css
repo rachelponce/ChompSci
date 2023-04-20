@@ -16,7 +16,7 @@
 
 .home {
     background-color: black;
-    height: 90vh; 
+    /* height: 90vh;  */
     width: 100%; 
     display: flex; 
     box-shadow: 2px 2px 2px 1px rgba(195, 136, 136, 0.2);
