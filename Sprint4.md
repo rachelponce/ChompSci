@@ -346,7 +346,7 @@ func TestUserType(t *testing.T) {
 }
 ```
 
-6) Testing event verification ensuring successful event logging
+6) Testing event verification ensuring successful event logging in database
 ```
 func TestCalendar(t *testing.T) {
 	db, err := gorm.Open(sqlite.Open("calendarEvents.db"), &gorm.Config{})
@@ -424,6 +424,8 @@ type User struct {
 4) **Email**: User’s UF email address which has the limitation of a being a unique index as not one individual will have the same email as another
 
 5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
+
+6) **UserType**: User's professional title, can either be a student, faculty member, or UF club board member
 
 ### Event Object
 ```
