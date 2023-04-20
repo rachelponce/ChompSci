@@ -5,7 +5,8 @@
 2) Created a new opportunities page with displays opportunities for research, internships, tutoring, clubs, and more in a messaging/blog-posting format. 
 3) Created a profile page a user can access once properly signed in that is filled with default information from database
 4) Using JWT Authentication and Local Storage, a user can remain signed in while visiting any tab on website until logging out
-5) 
+5) Updated the Calendar so that signed-in users can dynamically add new events. 
+6) Updated the Home page slideshow so that it displays club/organization event posters alongside information about the event. 
 
 ## Front-end Unit Testing
 Home page:
