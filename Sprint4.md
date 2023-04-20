@@ -304,6 +304,33 @@ type User struct {
 
 5) **Password**: User’s password in the application which also has the limitation of being a unique index to prevent any unauthorized access to their accounts
 
+### Event Object
+```
+type Event struct {
+	gorm.Model
+	EventTitle       string
+	EventDate        string
+	EventURL         string
+	EventDescription string
+	EventClub        string
+	EventLocation    string
+}
+```
+#### Attributes
+1) **gorm.Model**: Includes a unique ID for each event and the times when the event row was created, updated, and deleted
+
+2) **EventTitle**: Title of Calendar event
+
+3) **EventDate**: Date of Calendar event 
+
+4) **EventURL**: URL promoting Calendar event on any social media platform
+
+5) **EventDescription**: Further description of Calendar event
+
+6) **EventClub**: The club that is hosting the Calendar event
+
+7) **EventLocation**: Location of Calendar event
+
 
 ### Functions to Interact with Database
 1.	**func PrintUserInfo()**
