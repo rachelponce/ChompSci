@@ -15,6 +15,48 @@ export function EditEvent(props: any ) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    async function handleSubmit(event: { preventDefault: () => void; }) {
+/*         handleClose();
+        event.preventDefault();
+        setTitle(title);
+        setDate(date); 
+        props.newEvent(title, date); 
+        console.log("hello from editevent!");  */
+
+        handleClose();
+        event.preventDefault();
+        //setTitle(title);
+        //setDate(date); 
+        setTitle('');
+        setDate(''); 
+        props.newEvent(title, date, location, url, club, description); 
+        //console.log("hello from editevent!"); 
+        // Other thing isnt getting called cuz i never called it in here tbh 
+        // how to send this data to calendar on submit?
+
+        /* event.preventDefault();
+        onSubmit(title, date);
+        setTitle('');
+        setDate('');
+        console.log(title, date) */
+    
+       const response = await fetch('http://localhost:3000/api/calendar/add-event', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            EventTitle: title, 
+            EventDate: date, 
+            EventURL: url,
+            EventDescription: description, 
+            EventClub: club, 
+            EventLocation: location
+          })
+        });
+
+        const content = await response.json();
+        console.log(content)
+      }
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -32,17 +74,7 @@ export function EditEvent(props: any ) {
                 </Modal.Header>
                 <Modal.Body>
                     <form
-                        onSubmit={(e) => {
-                            handleClose();
-                            e.preventDefault();
-                            setTitle("");
-                            setDate(""); 
-                            props.newEvent(title, date, location, url, club, description); 
-                            console.log("hello from editevent!"); 
-
-                            // Other thing isnt getting called cuz i never called it in here tbh 
-                            // how to send this data to calendar on submit?
-                        }}
+                        onSubmit={handleSubmit}
                         id="editmodal"
                         className="w-full max-w-sm"
                     >

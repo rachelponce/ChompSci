@@ -5,13 +5,10 @@ import interactionPlugin from '@fullcalendar/interaction'
 import "../Calendar/Calendar-page.css"
 import * as bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from 'react' 
+import React, { useState, useEffect } from 'react' 
 import { EditEvent } from './AddEvent' 
 
 function Events() {
-
-
-
   const [events, setEvents] = useState([
     {
       title: "Sprint 4", 
@@ -20,19 +17,29 @@ function Events() {
       url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
       club: "CEN3031",
       description: "The final stretch lets goooo"
-    }, 
+    },
+
     {
-      title: "WiCSE GBM #4", 
-      date: "2023-04-12T18:30:00", 
-      location: "TUR L007", 
-      url: "https://www.instagram.com/p/Cp3JPN7uCTL/", 
-      club: "UF Women in Computer Science and Engineering",
-      description: "Good afternoon fabulous WiCSE members!! I am excited to announce that our final GBM of the semester will be happening this Wednesday, April 12th at 6:30pm in TUR L007. This super fun GBM will be featuring A fireside chat with Sue Harnett, the Founder and President of Rewriting the Code (RTC), one of the largest and most impactful non profit organizations that empowers college, graduate, and early career women in tech. Join us in an exciting talk to learn about women in the tech industry, managing duck syndrome, and how to become part of the RTC network. Be there!"
+      title: "WICSE GBM #10", 
+      date: "2023-04-23T23:00:00", 
+      location: "CSE122", 
+      url: "wicse.com", 
+      club: "WICSE",
+      description: "WICSE GBM #3 - Chipotle Catering!"
+    },
+
+    {
+      title: "Austria X UF CISE Study Abroad Deadline", 
+      date: "2023-04-29T23:00:00", 
+      location: " ", 
+      url: " ", 
+      club: "UF Study Abroad Program",
+      description: "Last day to submit applications for Summer 2040 Austria Study Abroad Program"
     }
-  ])
+  ]) 
 
 function newEvent(t: string, d:string, l:string, u:string, c:string, de:string) {// current problem: this isnt getting called 
-  console.log("hello from NewEvent")
+  //console.log("hello from NewEvent")
   let newEvent = {
       title: t, 
       date: d, 
@@ -42,9 +49,27 @@ function newEvent(t: string, d:string, l:string, u:string, c:string, de:string) 
       description: de
   }
   setEvents([...events, newEvent])
-  console.log("hello from NewEvent")
+  //window.localStorage.setItem(generateRandomString(), JSON.stringify(events))
+  //setEvents([newEvent, ...events])
+  //console.log("hello from NewEvent")
   console.log(events)
-}
+} 
+
+/* window.onload = function() {
+  //localStorage.setItem('arr', JSON.stringify(events))
+  //localStorage.setItem('adasds', JSON.stringify(events))
+  if(localStorage.getItem('arr') == null){
+    window.localStorage.setItem('arr', JSON.stringify(events))
+  }
+}  */
+
+var randomstring = require("randomstring")
+useEffect(() => {
+  //console.log('beginning of useEffect')
+  window.localStorage.setItem(randomstring.generate(), JSON.stringify(events))
+ // console.log('setEvents', setEvents)
+ // console.log('end of useEffect')
+}, [events]) 
 
 function Calendar() { 
 
@@ -111,3 +136,7 @@ return (
 
 
 export default Events
+function generateRandomString(): string {
+  throw new Error('Function not implemented.')
+}
+
