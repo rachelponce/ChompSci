@@ -39,7 +39,7 @@ const Landing = () => {
                 </div>
             <div className='small-text'>
                 <p></p>
-                {/* <BrowserRouter> For landing page unit tests to work uncomment these two lines  */} 
+                {/* <BrowserRouter>    */}
                 <Link to="/home">See what's happening this week. </Link>
                 {/* </BrowserRouter> */}
             </div>

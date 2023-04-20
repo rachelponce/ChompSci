@@ -26,11 +26,15 @@ test('Slider is rendered', async () => {
   render(<Home />)
   const slider = screen.getByTestId('slider'); 
   expect(slider).toBeDefined(); 
-  expect (slider).toBeVisible(); 
 })
 
 test('Slider has correct class', async () => {
   render(<Home />)
   const slider = screen.getByTestId('slider'); 
   expect(slider).toHaveClass("slidey"); 
+})
+test('Slider has correct class', async () => {
+  render(<Home />)
+  const slider = screen.getByTestId('slider'); 
+  expect(slider).toBeVisible(); 
 })
