@@ -81,7 +81,7 @@ Testing Installations:
   npm install --save-dev @babel/preset-typescript
 ```
 
-Still in the front-end/my-app directoy, you can now run:
+Still in the front-end/my-app directory, you can now run:
 
 ### `npm start`
 
@@ -94,5 +94,38 @@ Launches the test runner in the interactive watch mode.
 
 **Back-end Installations:**
 
+Getting Gin
+```
+import "github.com/gin-gonic/gin"
+$ go get -u github.com/gin-gonic/gin
+```
+Install GORM
+```
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/sqlite
+```
 
-    
+Install an sqlite3 driver that conforms to the built-in database/sql interface.
+```
+go get github.com/mattn/go-sqlite3
+```
+
+Install the SQLite Extension in VSCode to explore and query SQLite databases
+```
+vscode-sqlite
+```
+Install package validator which implements value validations for structs and individual fields based on tags.
+```
+go get github.com/go-playground/validator/v10
+import "github.com/go-playground/validator/v10"
+```
+
+Still in the backend/chompSite directory, you can now run:
+
+### `go run main.go`
+
+Runs the backend server as it listens and serves HTTP requests on http://localhost:8080 \ 
+
+### `go test` or ### `go test -v`
+
+Launches the testing in Go.
