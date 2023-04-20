@@ -225,6 +225,28 @@ func TestFailingRequirement(t *testing.T) {
 }
 ```
 
+4) Testing minimum input requirements
+```
+func TestFirstNameRequirement(t *testing.T) {
+	testSetup()
+
+	user := &User{
+		FirstName: "J",                    // FAIL, min!=2
+		LastName:  "D",                    // FAIL, min!=2
+		Email:     "~!!!!!emailgmail.com", // FAIL, does not exclude excludesall=!#?$%^&*()+-~ and
+		// does not meet email req.
+		Password: "P", // FAIL, length < 8
+		UserType: 1,
+	}
+
+	validate := validator.New()
+	err := validate.Struct(user)
+	assert.NoError(t, err, user)
+}
+```
+
+### Database Testing
+
 
 ## Updated API Documentation 
 ### Introduction
